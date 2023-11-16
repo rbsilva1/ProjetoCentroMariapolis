@@ -21,45 +21,26 @@ public class HistoricoController {
 
     @FXML
     private Button paginainicial;
+
+    private Parent root;
+    private Scene scene;
+    private Stage stage;
+
     @FXML
-    public void abrirHistorico(ActionEvent event) { // Função de Abir a tela de Histórico
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Historico.fxml"));
-            Parent root = loader.load();
-            // Obter o controlador da outra tela
-            HistoricoController controller = loader.getController();
-
-            // Obtendo a referência do Stage atual
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Mudando a cena do Stage
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+    public void abrirHistorico(ActionEvent event) throws IOException { // Função de Abir a tela de Histórico
+        Parent root = FXMLLoader.load(getClass().getResource("  Historico.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
-    public void voltarTelaInicial(ActionEvent event){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
-            Parent root = loader.load();
-            // Obter o controlador da outra tela
-            HistoricoController controller = loader.getController();
-
-            // Obtendo a referência do Stage atual
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Mudando a cena do Stage
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+    public void voltarTelaInicial(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
