@@ -18,12 +18,12 @@
          <children>
             <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
                <children>
-                  <Button fx:id="paginainicial" layoutX="863.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
+                  <Button fx:id="paginainicial" layoutX="863.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="historico" layoutX="1040.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
+                  <Button fx:id="botaoHistorico" layoutX="1040.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>

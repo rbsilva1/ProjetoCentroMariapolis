@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,7 +15,25 @@ import java.io.IOException;
 public class HomeController {
 
     @FXML
-    private Button botaoVermais;
+    private Button botaoHistorico;
+
+    @FXML
+    private Button botaoVerMais;
+
+    @FXML
+    private Button buscar;
+
+    @FXML
+    private TextField digitarCPF;
+
+    @FXML
+    private Button inscricoes;
+
+    @FXML
+    private Button lupa;
+
+    @FXML
+    private Button paginainicial;
 
     @FXML
     public void abrirHistorico(ActionEvent event) {
@@ -24,16 +43,39 @@ public class HomeController {
             // Obter o controlador da outra tela
             HistoricoController controller = loader.getController();
 
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
+            // Obtendo a referência do Stage atual
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Mudando a cena do Stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
             stage.show();
-            // Fechar tela
-            ((Node)(event.getSource())).getScene().getWindow().hide();
 
         } catch (IOException e) {
-            System.out.println("NÃO ENCOTROU O CAMINHO !\n");
+            System.out.println(e);
         }
     }
 
+    @FXML
+    public void voltarTelaInicial(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+            Parent root = loader.load();
+            // Obter o controlador da tela inicial (Home.fxml)
+            HomeController controller = loader.getController();
 
+            // Obtendo a referência do Stage atual
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Mudando a cena do Stage
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
 }
+
+
