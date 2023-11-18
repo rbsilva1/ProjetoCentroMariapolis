@@ -28,7 +28,7 @@
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
+                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE" onAction="#abrirInscricoes">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>

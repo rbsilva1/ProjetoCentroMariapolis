@@ -12,17 +12,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HistoricoController {
-
     @FXML
     private Button historico;
-
     @FXML
     private Button inscricoes;
-
     @FXML
     private Button paginainicial;
-
-    private Parent root;
     private Scene scene;
     private Stage stage;
 
