@@ -1,4 +1,4 @@
-package com.example.projetop3;
+package com.example.projeto;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,30 +7,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeController {
+public class HistoricoController {
 
     @FXML
-    private Button botaoHistorico;
-
-    @FXML
-    private Button botaoVerMais;
-
-    @FXML
-    private Button buscar;
-
-    @FXML
-    private TextField digitarCPF;
+    private Button historico;
 
     @FXML
     private Button inscricoes;
-
-    @FXML
-    private Button lupa;
 
     @FXML
     private Button paginainicial;
@@ -40,8 +27,8 @@ public class HomeController {
     private Stage stage;
 
     @FXML
-    public void abrirHistorico(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Historico.fxml"));
+    public void abrirHistorico(ActionEvent event) throws IOException { // Função de Abir a tela de Histórico
+        Parent root = FXMLLoader.load(getClass().getResource("  Historico.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -49,13 +36,11 @@ public class HomeController {
     }
     @FXML
     public void voltarTelaInicial(ActionEvent event) throws IOException {
-
         Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
 }
-
-

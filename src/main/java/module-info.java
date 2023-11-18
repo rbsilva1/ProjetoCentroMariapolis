@@ -1,8 +1,7 @@
-module com.example.projetop3 {
+module com.example.projeto {
     requires javafx.controls;
     requires javafx.fxml;
 
-
-    opens com.example.projetop3 to javafx.fxml;
-    exports com.example.projetop3;
+    opens com.example.projeto to javafx.fxml;
+    exports com.example.projeto;
 }
