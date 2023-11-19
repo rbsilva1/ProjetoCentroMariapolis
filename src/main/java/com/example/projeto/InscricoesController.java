@@ -22,13 +22,7 @@ public class InscricoesController {
   private Button paginainicial;
 
   @FXML
-  private Button detalhesCafe;
-
-  @FXML
-  private Button detalhesAlmoco;
-
-  @FXML
-  private Button detalhesJanta;
+  private Button detalhes;
 
   private Scene scene;
   private Stage stage;
@@ -41,7 +35,7 @@ public class InscricoesController {
     stage.setScene(scene);
     stage.show();
   }
-
+  
   @FXML
   public void abrirInscricoes(ActionEvent event) throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("Inscricoes.fxml"));
