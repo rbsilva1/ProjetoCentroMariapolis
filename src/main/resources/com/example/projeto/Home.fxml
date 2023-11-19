@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetop3.HomeController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.HomeController">
    <children>
       <AnchorPane prefHeight="412.0" prefWidth="708.0" style="-fx-background-color: #E8B0B069;">
          <children>
@@ -28,7 +28,7 @@
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
+                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE" onAction="#abrirInscricoes">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
@@ -40,7 +40,7 @@
                   </Label>
                   <ImageView fitHeight="72.0" fitWidth="79.0" layoutX="59.0" layoutY="16.0">
                      <image>
-                        <Image url="@cropped-p512x512-180x180-removebg-preview%201.png" />
+                        <Image url="@logo-centro.png" />
                      </image>
                   </ImageView>
                   <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">

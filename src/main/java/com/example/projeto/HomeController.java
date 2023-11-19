@@ -1,4 +1,4 @@
-package com.example.projetop3;
+package com.example.projeto;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,13 +35,21 @@ public class HomeController {
     @FXML
     private Button paginainicial;
 
-    private Parent root;
     private Scene scene;
     private Stage stage;
 
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Historico.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void abrirInscricoes(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Inscricoes.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
