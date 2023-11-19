@@ -54,6 +54,11 @@ public class HistoricoController {
         stage.show();
     }
 
+    @FXML 
+    public void abrirEventos(ActionEvent event) throws IOException {
+        System.out.println("Abrindo página de eventos...");
+    }
+
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Historico.fxml"));
