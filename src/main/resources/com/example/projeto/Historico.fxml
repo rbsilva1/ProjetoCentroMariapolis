@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.HistoricoController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.upe.Controllers.HistoricoController">
     <children>
         <AnchorPane prefHeight="412.0" prefWidth="708.0" style="-fx-background-color: #E8B0B069;">
             <children>
                 <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
                     <children>
-                        <Button fx:id="paginainicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
+                        <Button fx:id="botaoPaginaInicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
                             <font>
                                 <Font name="Reem Kufi Regular" size="20.0" />
                             </font>
                         </Button>
-                        <Button fx:id="paginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
+                        <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
                             <font>
                                 <Font name="Reem Kufi Regular" size="20.0" />
                             </font>
                         </Button>
-                        <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
+                        <Button fx:id="botaoPaginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirEventos" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
+                            <font>
+                                <Font name="Reem Kufi Regular" size="20.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="botaoPaginaEventos" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirIncricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
                             <font>
                                 <Font name="Reem Kufi Regular" size="20.0" />
                             </font>
@@ -37,109 +46,248 @@
                         </Label>
                         <ImageView fitHeight="72.0" fitWidth="79.0" layoutX="59.0" layoutY="16.0">
                             <image>
-                                <Image url="@logo-centro.png" />
+                                <Image url="@cropped-p512x512-180x180-removebg-preview%201.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
-                            <font>
-                                <Font name="Reem Kufi Regular" size="20.0" />
-                            </font>
-                        </Button>
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="176.0" layoutY="111.0" prefHeight="311.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
+                <AnchorPane layoutX="173.0" layoutY="98.0" prefHeight="346.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
                     <children>
                         <Label layoutX="14.0" layoutY="10.0" text="Nome">
                             <font>
                                 <Font name="System Bold" size="15.0" />
                             </font>
                         </Label>
-                        <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
                         <Label layoutX="8.0" layoutY="81.0" text="CPF">
                             <font>
                                 <Font name="System Bold" size="15.0" />
                             </font>
                         </Label>
-                        <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
-                        <Label layoutX="9.0" layoutY="155.0" text="Refeição">
+                        <Label layoutX="14.0" layoutY="230.0" text="Refeições">
                             <font>
                                 <Font name="System Bold" size="15.0" />
                             </font>
                         </Label>
-                        <TextArea editable="false" layoutX="10.0" layoutY="181.0" prefHeight="111.0" prefWidth="219.0" />
+                  <Label layoutX="10.0" layoutY="156.0" text="Evento">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="campoNome1" layoutX="14.0" layoutY="37.0" prefHeight="37.0" prefWidth="212.0" />
+                  <TextField fx:id="campoCPF1" layoutX="14.0" layoutY="102.0" prefHeight="37.0" prefWidth="212.0" />
+                  <TextField fx:id="campoEvento1" layoutX="14.0" layoutY="177.0" prefHeight="37.0" prefWidth="212.0" />
+                  <TextField fx:id="campoRefeicoes1" layoutX="14.0" layoutY="251.0" prefHeight="81.0" prefWidth="212.0" />
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="481.0" layoutY="111.0" prefHeight="311.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
-                    <children>
-                        <Label layoutX="14.0" layoutY="10.0" text="Nome">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
-                        <Label layoutX="8.0" layoutY="81.0" text="CPF">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
-                        <Label layoutX="9.0" layoutY="155.0" text="Refeição">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="10.0" layoutY="181.0" prefHeight="111.0" prefWidth="219.0" />
-                    </children>
-                </AnchorPane>
-                <AnchorPane layoutX="775.0" layoutY="111.0" prefHeight="311.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
-                    <children>
-                        <Label layoutX="14.0" layoutY="10.0" text="Nome">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
-                        <Label layoutX="8.0" layoutY="81.0" text="CPF">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
-                        <Label layoutX="9.0" layoutY="155.0" text="Refeição">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="10.0" layoutY="181.0" prefHeight="111.0" prefWidth="219.0" />
-                    </children>
-                </AnchorPane>
-                <AnchorPane layoutX="1085.0" layoutY="111.0" prefHeight="311.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
-                    <children>
-                        <Label layoutX="14.0" layoutY="10.0" text="Nome">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
-                        <Label layoutX="8.0" layoutY="81.0" text="CPF">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
-                        <Label layoutX="9.0" layoutY="155.0" text="Refeição">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Label>
-                        <TextArea editable="false" layoutX="10.0" layoutY="181.0" prefHeight="111.0" prefWidth="219.0" />
-                    </children>
-                </AnchorPane>
-            <Label layoutX="176.0" layoutY="94.0" text="Data:">
+            <AnchorPane layoutX="460.0" layoutY="98.0" prefHeight="346.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Nome">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
+                  <Label layoutX="8.0" layoutY="81.0" text="CPF">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
+                  <Label layoutX="14.0" layoutY="230.0" text="Refeições">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="156.0" text="Evento">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="11.0" layoutY="182.0" prefHeight="31.0" prefWidth="219.0" />
+                  <TextArea editable="false" layoutX="11.0" layoutY="251.0" prefHeight="81.0" prefWidth="219.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="735.0" layoutY="98.0" prefHeight="346.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Nome">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
+                  <Label layoutX="8.0" layoutY="81.0" text="CPF">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
+                  <Label layoutX="14.0" layoutY="230.0" text="Refeições">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="156.0" text="Evento">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="11.0" layoutY="182.0" prefHeight="31.0" prefWidth="219.0" />
+                  <TextArea editable="false" layoutX="11.0" layoutY="251.0" prefHeight="81.0" prefWidth="219.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1029.0" layoutY="98.0" prefHeight="346.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Nome">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
+                  <Label layoutX="8.0" layoutY="81.0" text="CPF">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
+                  <Label layoutX="14.0" layoutY="230.0" text="Refeições">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="156.0" text="Evento">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="11.0" layoutY="182.0" prefHeight="31.0" prefWidth="219.0" />
+                  <TextArea editable="false" layoutX="11.0" layoutY="251.0" prefHeight="81.0" prefWidth="219.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="173.0" layoutY="466.0" prefHeight="294.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Nome">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
+                  <Label layoutX="8.0" layoutY="81.0" text="CPF">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
+                  <Label layoutX="14.0" layoutY="230.0" text="Refeições">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="156.0" text="Evento">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="11.0" layoutY="182.0" prefHeight="31.0" prefWidth="219.0" />
+                  <TextArea editable="false" layoutX="11.0" layoutY="251.0" prefHeight="45.0" prefWidth="219.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="460.0" layoutY="466.0" prefHeight="296.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Nome">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
+                  <Label layoutX="8.0" layoutY="81.0" text="CPF">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
+                  <Label layoutX="14.0" layoutY="230.0" text="Refeições">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="156.0" text="Evento">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="11.0" layoutY="182.0" prefHeight="31.0" prefWidth="219.0" />
+                  <TextArea editable="false" layoutX="11.0" layoutY="251.0" prefHeight="45.0" prefWidth="219.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="735.0" layoutY="466.0" prefHeight="296.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Nome">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
+                  <Label layoutX="8.0" layoutY="81.0" text="CPF">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
+                  <Label layoutX="14.0" layoutY="230.0" text="Refeições">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="156.0" text="Evento">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="11.0" layoutY="182.0" prefHeight="31.0" prefWidth="219.0" />
+                  <TextArea editable="false" layoutX="11.0" layoutY="251.0" prefHeight="45.0" prefWidth="219.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1029.0" layoutY="466.0" prefHeight="256.0" prefWidth="239.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" text="Nome">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="8.0" layoutY="34.0" prefHeight="37.0" prefWidth="219.0" />
+                  <Label layoutX="8.0" layoutY="81.0" text="CPF">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="9.0" layoutY="107.0" prefHeight="31.0" prefWidth="219.0" />
+                  <Label layoutX="14.0" layoutY="230.0" text="Refeições">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="156.0" text="Evento">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" layoutX="11.0" layoutY="182.0" prefHeight="31.0" prefWidth="219.0" />
+                  <TextArea editable="false" layoutX="11.0" layoutY="251.0" prefHeight="45.0" prefWidth="219.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="173.0" layoutY="81.0" text="Data:">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <Text layoutX="213.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18/11/2023 | 15:30" wrappingWidth="196.0" />
+            <Label layoutX="173.0" layoutY="449.0" text="Data:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ScrollBar fx:id="scrollBar" layoutX="1337.0" layoutY="90.0" orientation="VERTICAL" prefHeight="671.0" prefWidth="14.0" />
+            <Text fx:id="campoFiltro" layoutX="37.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrar Por Evento ∇" />
             </children>
         </AnchorPane>
     </children>
