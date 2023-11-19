@@ -19,7 +19,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.InscricoesController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.InscricoesTableController">
   <children>
     <AnchorPane prefHeight="403.0" prefWidth="1440.0" style="-fx-background-color: #E8B0B069;">
          <children>
@@ -59,7 +59,7 @@
             </AnchorPane>
             <AnchorPane layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0" style="-fx-background-color: ffff;" AnchorPane.rightAnchor="44.0">
                <children>
-                <VBox>
+                <VBox layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0">
                   <padding>
                     <Insets top="20" bottom="20" left="20" right="20" />
                   </padding>
