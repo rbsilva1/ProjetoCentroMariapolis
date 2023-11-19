@@ -19,24 +19,79 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-  prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21"
-  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.InscricoesTableController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.InscricoesController">
   <children>
-    <VBox>
-      <padding>
-        <Insets top="20" bottom="20" left="20" right="20" />
-      </padding>
-
-      <TableView>
-        <columns>
-          <TableColumn text="ID"></TableColumn>
-          <TableColumn text="Nome"></TableColumn>
-          <TableColumn text="CPF"></TableColumn>
-          <TableColumn text="Refeições"></TableColumn>
-          <TableColumn text="Eventos"></TableColumn>
-        </columns>
-      </TableView>
-    </VBox>
+    <AnchorPane prefHeight="403.0" prefWidth="1440.0" style="-fx-background-color: #E8B0B069;">
+         <children>
+            <AnchorPane prefHeight="88.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
+               <children>
+                  <Button fx:id="paginainicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="paginaEventos" layoutX="1084.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirInscricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="136.0" layoutY="21.0" prefHeight="60.0" prefWidth="575.0" text="Centro Mariápolis Santa Maria" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="72.0" fitWidth="79.0" layoutX="59.0" layoutY="16.0">
+                     <image>
+                        <Image url="@logo-centro.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0" style="-fx-background-color: ffff;" AnchorPane.rightAnchor="44.0">
+               <children>
+                <VBox>
+                  <padding>
+                    <Insets top="20" bottom="20" left="20" right="20" />
+                  </padding>
+                
+                  <TableView>
+                    <columns>
+                      <TableColumn text="ID"></TableColumn>
+                      <TableColumn text="Nome"></TableColumn>
+                      <TableColumn text="CPF"></TableColumn>
+                      <TableColumn text="Refeições"></TableColumn>
+                      <TableColumn text="Eventos"></TableColumn>
+                    </columns>
+                  </TableView>
+                </VBox>
+               </children>
+            </AnchorPane>
+            <Button layoutX="788.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1);" text="Importar" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="999.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1);" text="Exportar" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="1211.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1);" text="Atualizar" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+    </AnchorPane>
   </children>
 </StackPane>
