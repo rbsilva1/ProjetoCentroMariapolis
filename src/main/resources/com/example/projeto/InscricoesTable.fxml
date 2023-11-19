@@ -57,20 +57,23 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0" style="-fx-background-color: ffff;" AnchorPane.rightAnchor="44.0">
+            <AnchorPane layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0" style="-fx-background-color: 0000;" AnchorPane.rightAnchor="44.0">
                <children>
-                <VBox layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0">
+                <VBox prefHeight="530.0" prefWidth="1351.0">
                   <padding>
                     <Insets top="20" bottom="20" left="20" right="20" />
                   </padding>
                 
-                  <TableView>
+                  <TableView fx:id="tabela">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
                     <columns>
-                      <TableColumn text="ID"></TableColumn>
-                      <TableColumn text="Nome"></TableColumn>
-                      <TableColumn text="CPF"></TableColumn>
-                      <TableColumn text="Refeições"></TableColumn>
-                      <TableColumn text="Eventos"></TableColumn>
+                      <TableColumn text="ID" minWidth="40" maxWidth="40" fx:id="idColuna"></TableColumn>
+                      <TableColumn text="Nome" fx:id="nomeColuna"></TableColumn>
+                      <TableColumn text="CPF" minWidth="200" maxWidth="200" fx:id="cpfColuna"></TableColumn>
+                      <TableColumn text="Refeições" fx:id="refeicoesColuna"></TableColumn>
+                      <TableColumn text="Eventos" fx:id="eventosColuna"></TableColumn>
                     </columns>
                   </TableView>
                 </VBox>
