@@ -1,5 +1,7 @@
 package com.example.projeto;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,14 +11,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollBar;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class HistoricoController {
+public class HistoricoController implements javafx.fxml.Initializable {
 
     @FXML
     private Button botaoHistorico1;
@@ -46,6 +53,37 @@ public class HistoricoController {
     private ScrollBar scrollBar;
     private Scene scene;
     private Stage stage;
+
+    @FXML
+    private TableView<Historico> tabela;
+    @FXML
+    private TableColumn<Historico, String> nomeColuna;
+    @FXML
+    private TableColumn<Historico, String> cpfColuna;
+    @FXML
+    private TableColumn<Historico, String> refeicoesColuna;
+    @FXML
+    private TableColumn<Historico, String> eventoColuna;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        nomeColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        cpfColuna.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        eventoColuna.setCellValueFactory(new PropertyValueFactory<>("evento"));
+        refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("refeicoes"));
+
+        tabela.setItems(historico());
+    }
+
+    private ObservableList<Historico> historico() {
+        return FXCollections.observableArrayList(
+                new Historico("Daniel", "12345678910", 1, "Evento 1"),
+                new Historico("Rodrigo", "12345678910", 1, "Evento 1"),
+                new Historico("Kaiky", "12345678910", 1, "Evento 1"),
+                new Historico("Vitorio", "12345678910", 1, "Evento 1"),
+                new Historico("Anderson", "12345678910", 1, "Evento 1"),
+                new Historico("Rodrigo", "12345678910", 1, "Evento 1"));
+    }
 
     @FXML
     public void abrirInscricoes(ActionEvent event) throws IOException {
