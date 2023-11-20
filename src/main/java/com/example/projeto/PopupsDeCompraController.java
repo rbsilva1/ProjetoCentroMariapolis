@@ -1,5 +1,6 @@
 package com.example.projeto;
 
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,7 +11,7 @@ import javafx.scene.control.ComboBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PopupsController{
+public class PopupsDeCompraController{
 
     @FXML
     private ComboBox caixaDeEscolha;
