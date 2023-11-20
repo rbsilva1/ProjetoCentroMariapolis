@@ -76,4 +76,17 @@ public class InscricoesController {
     stage.setScene(scene);
     stage.show();
   }
+
+  @FXML
+  public void paginaEventos(ActionEvent event) throws IOException {
+    Screen screen = Screen.getPrimary();
+    Rectangle2D bounds = screen.getVisualBounds();
+    Parent root = FXMLLoader.load(getClass().getResource("Eventos.fxml"));
+    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+    stage.setMaximized(true);
+    stage.setScene(scene);
+    stage.show();
+  }
+
 }

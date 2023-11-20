@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.EventosController">
+    <children>
+        <AnchorPane prefHeight="412.0" prefWidth="708.0" style="-fx-background-color: #E8B0B069;">
+            <children>
+                <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
+                    <children>
+                        <Button fx:id="paginainicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
+                            <font>
+                                <Font name="Reem Kufi Regular" size="20.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="paginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
+                            <font>
+                                <Font name="Reem Kufi Regular" size="20.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirInscricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
+                            <font>
+                                <Font name="Reem Kufi Regular" size="20.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="136.0" layoutY="21.0" prefHeight="60.0" prefWidth="575.0" text="Centro Mariápolis Santa Maria" textFill="WHITE">
+                            <font>
+                                <Font name="Reem Kufi Bold" size="40.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="72.0" fitWidth="79.0" layoutX="59.0" layoutY="16.0">
+                            <image>
+                                <Image url="@logo-centro.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
+                            <font>
+                                <Font name="Reem Kufi Regular" size="20.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

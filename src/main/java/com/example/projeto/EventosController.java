@@ -8,37 +8,27 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeController {
+public class EventosController {
+
+    private Scene scene;
+    private Stage stage;
 
     @FXML
-    private Button botaoHistorico;
-
-    @FXML
-    private Button botaoVerMais;
-
-    @FXML
-    private Button buscar;
-
-    @FXML
-    private TextField digitarCPF;
+    private Button botaoHistorico1;
 
     @FXML
     private Button inscricoes;
 
     @FXML
-    private Button lupa;
+    private Button paginaEventos;
 
     @FXML
     private Button paginainicial;
-
-    private Scene scene;
-    private Stage stage;
 
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
@@ -69,17 +59,6 @@ public class HomeController {
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
         Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
-    public void paginaEventos(ActionEvent event) throws IOException {
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("Eventos.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
         stage.setMaximized(true);

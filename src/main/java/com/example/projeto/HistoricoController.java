@@ -25,6 +25,7 @@ import java.util.ResourceBundle;
 
 public class HistoricoController implements javafx.fxml.Initializable {
 
+    public Button botaoInscrições;
     @FXML
     private Button botaoHistorico1;
 
@@ -98,8 +99,15 @@ public class HistoricoController implements javafx.fxml.Initializable {
     }
 
     @FXML
-    public void abrirEventos(ActionEvent event) throws IOException {
-        System.out.println("Abrindo página de eventos...");
+    public void paginaEventos(ActionEvent event) throws IOException {
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
+        Parent root = FXMLLoader.load(getClass().getResource("Eventos.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+        stage.setMaximized(true);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
