@@ -3,6 +3,7 @@ package com.example.projeto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -49,12 +51,15 @@ public class HistoricoController {
     public void abrirInscricoes(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Inscricoes.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
+        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML 
+    @FXML
     public void abrirEventos(ActionEvent event) throws IOException {
         System.out.println("Abrindo página de eventos...");
     }
@@ -63,7 +68,10 @@ public class HistoricoController {
     public void abrirHistorico(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Historico.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
+        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
@@ -72,7 +80,10 @@ public class HistoricoController {
     public void voltarTelaInicial(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
+        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
