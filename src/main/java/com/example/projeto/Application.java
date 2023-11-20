@@ -12,9 +12,9 @@ public class Application extends javafx.application.Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("Home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        stage.setTitle("Projeto Centro Mariápolis !");
+        stage.setTitle("Projeto Centro Mariápolis!");
         stage.setScene(scene);
         //stage.setFullScreen(true);
         stage.show();
