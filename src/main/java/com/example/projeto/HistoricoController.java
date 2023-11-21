@@ -133,4 +133,5 @@ public class HistoricoController implements javafx.fxml.Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 }

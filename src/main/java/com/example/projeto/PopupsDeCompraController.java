@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -30,17 +31,17 @@ public class PopupsDeCompraController implements javafx.fxml.Initializable {
     private Stage stage;
     private Scene scene;
 
+
     @FXML
     void confirmarCompra(ActionEvent event) throws IOException {
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("PopDeCompraEfetuada.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("PopDeCompraEfetuada.fxml"));
+        Parent root = loader.load();
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Compra !");
+        popupStage.setScene(new Scene(root));
+        popupStage.setResizable(false);
+        popupStage.show();
     }
 
     @FXML

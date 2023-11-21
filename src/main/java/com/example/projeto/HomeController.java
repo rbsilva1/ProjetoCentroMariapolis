@@ -12,9 +12,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.Popup;
-import javafx.application.Application;
 import javafx.stage.Modality;
 import java.io.IOException;
+
+import static com.example.projeto.validacoes.CPF_Validacao.validarCPF;
 
 public class HomeController {
 
@@ -98,9 +99,29 @@ public class HomeController {
 
         Stage popupStage = new Stage();
         popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Pop-up");
+        popupStage.setTitle("Saldo Insuficiente !");
         popupStage.setScene(new Scene(root));
+        popupStage.setResizable(false);
         popupStage.show();
     }
+
+    @FXML
+    public void verificarCPF(ActionEvent event) throws IOException {
+        String cpf = digitarCPF.getText().trim();
+        boolean cpfValido = validarCPF(cpf);
+        if (cpfValido) {
+            // Se o CPF for válido chamar as funções necessárias!
+        } else {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupErroCpf.fxml"));
+            Parent root = loader.load();
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.setTitle("Erro CPF !");
+            popupStage.setScene(new Scene(root));
+            popupStage.setResizable(false);
+            popupStage.show();
+        }
+    }
+
 
 }
