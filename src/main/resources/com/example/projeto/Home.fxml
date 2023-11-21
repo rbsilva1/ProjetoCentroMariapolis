@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.HomeController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.HomeController">
    <children>
       <AnchorPane prefHeight="412.0" prefWidth="708.0" style="-fx-background-color: #E8B0B069;">
          <children>
@@ -23,12 +23,12 @@
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="paginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
+                  <Button fx:id="paginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" onAction="#paginaEventos" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE" onAction="#abrirInscricoes">
+                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirInscricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>

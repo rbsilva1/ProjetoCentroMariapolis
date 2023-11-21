@@ -22,7 +22,6 @@ public class Application extends javafx.application.Application {
         stage.setMaximized(true);
         stage.setTitle("Projeto Centro Mariápolis!");
         stage.setScene(scene);
-        //stage.setFullScreen(true);
         stage.show();
     }
 }
