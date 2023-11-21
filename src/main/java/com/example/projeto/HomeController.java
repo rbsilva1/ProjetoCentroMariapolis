@@ -11,7 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-
+import javafx.stage.Popup;
+import javafx.application.Application;
+import javafx.stage.Modality;
 import java.io.IOException;
 
 public class HomeController {
@@ -39,6 +41,7 @@ public class HomeController {
 
     private Scene scene;
     private Stage stage;
+    private Popup popup;
 
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
@@ -85,6 +88,19 @@ public class HomeController {
         stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
+    }
+
+
+    @FXML
+    void abrirPopupTeste(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupSaldoInsuficiente.fxml"));
+        Parent root = loader.load();
+
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Pop-up");
+        popupStage.setScene(new Scene(root));
+        popupStage.show();
     }
 
 }
