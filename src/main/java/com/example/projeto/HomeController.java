@@ -1,5 +1,6 @@
 package com.example.projeto;
 
+import com.example.projeto.validacoes.Formatar_CPF;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -93,19 +94,6 @@ public class HomeController {
 
 
     @FXML
-    void abrirPopupTeste(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupSaldoInsuficiente.fxml"));
-        Parent root = loader.load();
-
-        Stage popupStage = new Stage();
-        popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Saldo Insuficiente !");
-        popupStage.setScene(new Scene(root));
-        popupStage.setResizable(false);
-        popupStage.show();
-    }
-
-    @FXML
     public void verificarCPF(ActionEvent event) throws IOException {
         String cpf = digitarCPF.getText().trim();
         boolean cpfValido = validarCPF(cpf);
@@ -122,6 +110,13 @@ public class HomeController {
             popupStage.show();
         }
     }
-
+    @FXML
+    public void mascaraCPF(){
+        Formatar_CPF verifica_entrada = new Formatar_CPF();
+        verifica_entrada.setMask("###.###.###-##");
+        verifica_entrada.setCaracteresValidos("0123456789");
+        verifica_entrada.setTf(digitarCPF);
+        verifica_entrada.formatter();
+    }
 
 }
