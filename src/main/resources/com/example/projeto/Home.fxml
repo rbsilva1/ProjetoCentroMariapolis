@@ -23,12 +23,12 @@
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="paginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
+                  <Button fx:id="paginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" onAction="#paginaEventos" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE" onAction="#abrirInscricoes">
+                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirInscricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
@@ -43,7 +43,7 @@
                         <Image url="@logo-centro.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
+                  <Button fx:id="botaoHistorico" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
@@ -65,7 +65,7 @@
                      </font>
                   </Label>
                   <TextField fx:id="digitarCPF" layoutX="47.0" layoutY="125.0" prefHeight="25.0" prefWidth="326.0" promptText="123.456.789-00" style="-fx-border-radius: 20px;;" />
-                  <Button fx:id="buscar" layoutX="178.0" layoutY="169.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Buscar" textAlignment="CENTER">
+                  <Button fx:id="buscar" layoutX="178.0" layoutY="169.0" mnemonicParsing="false" onAction="#verificarCPF" style="-fx-cursor: hand;" text="Buscar" textAlignment="CENTER">
                      <font>
                         <Font name="Reem Kufi Regular" size="18.0" />
                      </font>

@@ -9,12 +9,14 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class InscricoesTableController implements javafx.fxml.Initializable {
@@ -57,9 +59,13 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
 
   @FXML
   public void abrirInscricoes(ActionEvent event) throws IOException {
+    Screen screen = Screen.getPrimary();
+    Rectangle2D bounds = screen.getVisualBounds();
     Parent root = FXMLLoader.load(getClass().getResource("Inscricoes.fxml"));
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
+
+    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+    stage.setMaximized(true);
     stage.setScene(scene);
     stage.show();
   }
@@ -68,7 +74,10 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
   public void abrirHistorico(ActionEvent event) throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("Historico.fxml"));
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
+    Screen screen = Screen.getPrimary();
+    Rectangle2D bounds = screen.getVisualBounds();
+    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+    stage.setMaximized(true);
     stage.setScene(scene);
     stage.show();
   }
@@ -77,8 +86,23 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
   public void voltarTelaInicial(ActionEvent event) throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
+    Screen screen = Screen.getPrimary();
+    Rectangle2D bounds = screen.getVisualBounds();
+    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+    stage.setMaximized(true);
     stage.setScene(scene);
     stage.show();
   }
+  @FXML
+  public void paginaEventos(ActionEvent event) throws IOException {
+    Screen screen = Screen.getPrimary();
+    Rectangle2D bounds = screen.getVisualBounds();
+    Parent root = FXMLLoader.load(getClass().getResource("Eventos.fxml"));
+    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+    stage.setMaximized(true);
+    stage.setScene(scene);
+    stage.show();
+  }
+
 }
