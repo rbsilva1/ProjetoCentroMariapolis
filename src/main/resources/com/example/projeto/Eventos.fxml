@@ -6,13 +6,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.EventosController">
     <children>
         <AnchorPane prefHeight="412.0" prefWidth="708.0" style="-fx-background-color: #E8B0B069;">
             <children>
-                <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0"  style="-fx-background-color: #426DA7;">
+                <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
                     <children>
                         <Button fx:id="paginainicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
                             <font>
@@ -46,6 +47,27 @@
                         </Button>
                     </children>
                 </AnchorPane>
+            <AnchorPane layoutX="78.0" layoutY="111.0" prefHeight="566.0" prefWidth="1278.0" style="-fx-background-color: ffff; -fx-background-radius: 40;">
+               <children>
+                  <Line endX="1177.0" layoutX="102.0" layoutY="181.0" startX="-100.0" stroke="#1a09d3" strokeWidth="3.0" />
+                  <Line endX="1176.0" layoutX="102.0" layoutY="379.0" startX="-100.0" stroke="#1a09d3" strokeWidth="3.0" />
+                  <ImageView fitHeight="153.0" fitWidth="188.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Evento1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="26.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Evento2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="26.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Evento3.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
             </children>
         </AnchorPane>
     </children>
