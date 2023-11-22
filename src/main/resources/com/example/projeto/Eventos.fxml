@@ -12,7 +12,7 @@
     <children>
         <AnchorPane prefHeight="412.0" prefWidth="708.0" style="-fx-background-color: #E8B0B069;">
             <children>
-                <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
+                <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0"  style="-fx-background-color: #426DA7;">
                     <children>
                         <Button fx:id="paginainicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
                             <font>

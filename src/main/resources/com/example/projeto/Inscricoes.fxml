@@ -47,7 +47,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0" style="-fx-background-color: ffff;" AnchorPane.rightAnchor="44.0">
+            <AnchorPane layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0" style="-fx-background-color: ffff; -fx-background-radius:40px;" AnchorPane.rightAnchor="44.0">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -81,12 +81,12 @@
                         <Font name="System Bold" size="19.0" />
                      </font>
                   </Label>
-                  <Label layoutX="214.0" layoutY="49.0" prefHeight="88.0" prefWidth="456.0" text="XX Pessoas estão aptas para comer no café da manhã">
+                  <Label layoutX="214.0" layoutY="49.0" prefHeight="88.0" prefWidth="456.0" text="XX Pessoas estão previstas no café da manhã">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="214.0" layoutY="242.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas estão aptas para comer no almoço">
+                  <Label layoutX="214.0" layoutY="242.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas estão previstas no almoço">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -94,22 +94,22 @@
                   <Line endX="-100.0" endY="143.0" layoutX="810.0" layoutY="207.0" startX="-100.0" />
                   <Line endX="-100.0" endY="210.0" layoutX="811.0" layoutY="-41.0" startX="-100.0" startY="56.0" />
                   <Line endX="-100.5" endY="144.0" layoutX="811.0" layoutY="383.0" startX="-100.5" startY="15.0" />
-                  <Label layoutX="214.0" layoutY="413.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas estão aptas para comer na janta">
+                  <Label layoutX="214.0" layoutY="413.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas estão previstas na janta">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="791.0" layoutY="49.0" prefHeight="88.0" prefWidth="387.0" text="XX Comeram no café da manhã">
+                  <Label layoutX="791.0" layoutY="49.0" prefHeight="88.0" prefWidth="469.0" text="XX Pessoas entraram no refeitório para o café da manhã">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="791.0" layoutY="242.0" prefHeight="88.0" prefWidth="387.0" text="XX Comeram no almoço">
+                  <Label layoutX="791.0" layoutY="242.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas entraram no refeitório no almoço">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="791.0" layoutY="413.0" prefHeight="88.0" prefWidth="387.0" text="XX Comeram na janta">
+                  <Label layoutX="791.0" layoutY="413.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas entraram no refeitório na janta">
                      <font>
                         <Font size="18.0" />
                      </font>
