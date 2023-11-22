@@ -43,7 +43,7 @@
                         <Image url="@logo-centro.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
+                  <Button fx:id="botaoHistorico" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
