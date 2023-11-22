@@ -20,7 +20,6 @@
          </font>
       </Label>
       <Label layoutX="100.0" layoutY="171.0" text="Você não possui saldo o suficiente para a refeição" />
-      <Button fx:id="metodoPagamento" layoutX="255.0" layoutY="204.0" mnemonicParsing="false" onAction="#abrirPagamentos" prefHeight="25.0" prefWidth="100.0" text="Comprar saldo" />
-      <Button fx:id="voltar" layoutX="105.0" layoutY="204.0" mnemonicParsing="false" onAction="#voltarTela" prefHeight="25.0" prefWidth="100.0" text="Voltar" />
+      <Button fx:id="metodoPagamento" layoutX="180.0" layoutY="204.0" mnemonicParsing="false" onAction="#abrirPagamentos" prefHeight="25.0" prefWidth="100.0" text="Comprar saldo" />
    </children>
 </AnchorPane>

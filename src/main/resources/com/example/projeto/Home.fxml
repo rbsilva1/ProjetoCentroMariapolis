@@ -50,7 +50,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="500.0" layoutY="77.0" prefHeight="221.0" prefWidth="434.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20px;" AnchorPane.leftAnchor="500.0">
+            <AnchorPane layoutX="500.0" layoutY="77.0" prefHeight="221.0" prefWidth="434.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20px;">
                <children>
                   <Label layoutX="47.0" layoutY="12.0" text="Leitor de Código de Barras">
                      <font>
