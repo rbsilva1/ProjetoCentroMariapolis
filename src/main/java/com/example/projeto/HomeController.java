@@ -110,7 +110,7 @@ public class HomeController {
             popupStage.show();
         }
     }
-    @FXML
+    @FXML // Metódo que adiciona pontos e traços ao digitar o CPF e restringi para apenas números
     public void mascaraCPF(){
         Formatar_CPF verifica_entrada = new Formatar_CPF();
         verifica_entrada.setMask("###.###.###-##");
