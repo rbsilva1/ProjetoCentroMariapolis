@@ -19,7 +19,7 @@
          <children>
             <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
                <children>
-                  <Button fx:id="botaoPaginaInicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
+                  <Button fx:id="botaoPaginaInicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" prefHeight="44.0" prefWidth="142.0" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
                      <font>
                         <Font name="Reem Kufi Regular" size="20.0" />
                      </font>
@@ -85,7 +85,7 @@
             </Label> -->
             <!-- <ScrollBar fx:id="scrollBar" layoutX="1337.0" layoutY="90.0" orientation="VERTICAL"
                prefHeight="671.0" prefWidth="14.0" /> -->
-            <Text fx:id="campoFiltro" layoutX="37.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrar Por Evento ∇" />
+            <Text fx:id="campoFiltro" layoutX="37.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="Filtrar Por Evento ∇" />
          </children>
       </AnchorPane>
    </children>
