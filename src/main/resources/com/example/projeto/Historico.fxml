@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.HistoricoController">
+   <children>
+      <AnchorPane prefHeight="412.0" prefWidth="708.0" style="-fx-background-color: #E8B0B069;">
+         <children>
+            <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
+               <children>
+                  <Button fx:id="botaoPaginaInicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botaoPaginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" onAction="#paginaEventos" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botaoInscrições" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirInscricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="136.0" layoutY="21.0" prefHeight="60.0" prefWidth="575.0" text="Centro Mariápolis Santa Maria" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="72.0" fitWidth="79.0" layoutX="59.0" layoutY="16.0">
+                     <image>
+                        <Image url="@logo-centro.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0" style="-fx-background-color: 0000;" AnchorPane.rightAnchor="44.0">
+               <children>
+                  <VBox prefHeight="530.0" prefWidth="1351.0">
+                     <padding>
+                        <Insets bottom="20" left="20" right="20" top="20" />
+                     </padding>
+
+                     <TableView fx:id="tabela">
+                        <columnResizePolicy>
+                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                        <columns>
+                           <TableColumn fx:id="nomeColuna" text="Nome" />
+                           <TableColumn fx:id="cpfColuna" maxWidth="200" minWidth="200" text="CPF" />
+                           <TableColumn fx:id="eventoColuna" text="Evento" />
+                           <TableColumn fx:id="refeicoesColuna" text="Refeições" />
+                        </columns>
+                     </TableView>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Label layoutX="173.0" layoutY="81.0" text="Data:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Text layoutX="213.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18/11/2023 | 15:30" wrappingWidth="196.0" />
+            <!-- <Label layoutX="173.0" layoutY="449.0" text="Data:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label> -->
+            <!-- <ScrollBar fx:id="scrollBar" layoutX="1337.0" layoutY="90.0" orientation="VERTICAL"
+               prefHeight="671.0" prefWidth="14.0" /> -->
+            <Text fx:id="campoFiltro" layoutX="37.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrar Por Evento ∇" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
