@@ -66,6 +66,66 @@
                         <Image url="@Evento3.png" />
                      </image>
                   </ImageView>
+                  <Label layoutX="214.0" layoutY="25.0" text="Encontro de responsáveis de núcleo -Estados: AL-PB-PE-RN">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="74.0" prefHeight="21.0" prefWidth="504.0" text="Chegada à partir de:  Quarta, 15 de novembro de 2023, 19h para o jantar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="95.0" prefHeight="17.0" prefWidth="435.0" text="Até: Domingo, 19 de Novembro de 2023 14h após o almoço">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="214.0" layoutY="133.0" mnemonicParsing="false" onAction="#abrirHistorico" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Ver inscritos" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="214.0" layoutY="220.0" text="Encontro de responsáveis de núcleo -Estados: BA-SE-MA-PI-CE">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="264.0" text="Chegada à partir de:  Quarta, 15 de novembro de 2023, 19h para o jantar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="285.0" prefHeight="17.0" prefWidth="435.0" text="Até: Domingo, 19 de Novembro de 2023 14h após o almoço">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="214.0" layoutY="321.0" mnemonicParsing="false" onAction="#abrirHistorico" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Ver inscritos" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="214.0" layoutY="395.0" text="Exercícios Espirituais 2023">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="443.0" text="Chegada à partir de:  Quarta, 15 de novembro de 2023, 19h para o jantar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="464.0" prefHeight="17.0" prefWidth="435.0" text="Até: Domingo, 19 de Novembro de 2023 14h após o almoço">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="214.0" layoutY="496.0" mnemonicParsing="false" onAction="#abrirHistorico" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Ver inscritos" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
             </children>
