@@ -50,7 +50,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="500.0" layoutY="77.0" prefHeight="221.0" prefWidth="434.0" style="-fx-background-color: #ffffff; -fx-border-radius: 20px;" AnchorPane.leftAnchor="500.0">
+            <AnchorPane layoutX="500.0" layoutY="77.0" prefHeight="221.0" prefWidth="434.0" style="-fx-background-color: #ffffff; -fx-border-radius: 40px;" AnchorPane.leftAnchor="500.0">
                <children>
                   <Label layoutX="47.0" layoutY="12.0" text="Leitor de Código de Barras">
                      <font>
@@ -64,13 +64,18 @@
                         <Font name="Reem Kufi Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="digitarCPF" layoutX="47.0" layoutY="125.0" prefHeight="25.0" prefWidth="326.0" promptText="123.456.789-00" style="-fx-border-radius: 20px;;" />
+                  <TextField fx:id="digitarCPF" layoutX="47.0" layoutY="125.0" onKeyReleased="#mascaraCPF" prefHeight="25.0" prefWidth="326.0" promptText="123.456.789-00" style="-fx-border-radius: 20px;;" />
                   <Button fx:id="buscar" layoutX="178.0" layoutY="169.0" mnemonicParsing="false" onAction="#verificarCPF" style="-fx-cursor: hand;" text="Buscar" textAlignment="CENTER">
                      <font>
                         <Font name="Reem Kufi Regular" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="lupa" layoutX="321.0" layoutY="125.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Lupa" />
+                  <Button fx:id="lupa" layoutX="343.0" layoutY="125.0" mnemonicParsing="false" onAction="#verificarCPF" style="-fx-background-color: 0000; -fx-cursor: hand;" />
+                  <ImageView fitHeight="18.0" fitWidth="21.0" layoutX="338.0" layoutY="129.0">
+                     <image>
+                        <Image url="@lupa.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <Line endX="1224.0" layoutX="216.0" layoutY="308.0" startX="-216.0" stroke="#426da7" strokeWidth="5.0" />
