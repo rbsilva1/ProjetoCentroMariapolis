@@ -2,6 +2,7 @@ package com.example.projeto;
 
 import java.io.IOException;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +11,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import javafx.animation.PauseTransition;
 
 public class InscricoesController {
   @FXML
@@ -25,6 +29,9 @@ public class InscricoesController {
 
   @FXML
   private Button detalhes;
+
+  @FXML
+  private Button ButaoAtualizar;
 
   private Scene scene;
   private Stage stage;
@@ -87,6 +94,22 @@ public class InscricoesController {
     stage.setMaximized(true);
     stage.setScene(scene);
     stage.show();
+  }
+
+  @FXML 
+  void abrirPopupCarregando() throws IOException {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupDeCarregamento.fxml"));
+    Parent root = loader.load();
+    Stage popupStage = new Stage();
+    popupStage.initModality(Modality.APPLICATION_MODAL);
+    popupStage.setTitle("Carregando !");
+    popupStage.setScene(new Scene(root));
+    popupStage.setResizable(false);
+    popupStage.show();
+    PauseTransition delay = new PauseTransition(Duration.seconds(3));
+    delay.setOnFinished(event -> popupStage.close());
+
+    delay.play();
   }
 
 }

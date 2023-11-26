@@ -119,17 +119,17 @@
                   <Button fx:id="detalhesJanta" layoutX="1151.0" layoutY="399.0" mnemonicParsing="false" onAction="#mostrarDetalhes" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Detalhes - Janta" textFill="WHITE" />
                </children>
             </AnchorPane>
-            <Button layoutX="788.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Importar" textFill="WHITE">
+            <Button fx:id="BotaoImportar" layoutX="788.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Importar" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="999.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Exportar" textFill="WHITE">
+            <Button fx:id="BotaoExportar" layoutX="999.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Exportar" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="1211.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Atualizar" textFill="WHITE">
+            <Button fx:id="ButaoAtualizar" layoutX="1211.0" layoutY="97.0" mnemonicParsing="false" onAction="#abrirPopupCarregando" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
