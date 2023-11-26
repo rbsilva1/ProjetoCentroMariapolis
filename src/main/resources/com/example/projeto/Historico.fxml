@@ -65,7 +65,7 @@
                         <columns>
                            <TableColumn fx:id="nomeColuna" text="Nome" />
                            <TableColumn fx:id="cpfColuna" maxWidth="200" minWidth="200" text="CPF" />
-                           <TableColumn fx:id="eventoColuna" text="Evento" />
+                           <TableColumn fx:id="eventosColuna" text="Evento" />
                            <TableColumn fx:id="refeicoesColuna" text="Refeições" />
                         </columns>
                      </TableView>

@@ -16,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -24,8 +25,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HistoricoController implements javafx.fxml.Initializable {
-
+    @FXML
     public Button botaoInscrições;
+
     @FXML
     private Button botaoHistorico1;
 
@@ -56,34 +58,55 @@ public class HistoricoController implements javafx.fxml.Initializable {
     private Stage stage;
 
     @FXML
-    private TableView<Historico> tabela;
+    private TableView<Usuario> tabela;
     @FXML
-    private TableColumn<Historico, String> nomeColuna;
+    private TableColumn<Usuario, String> nomeColuna;
     @FXML
-    private TableColumn<Historico, String> cpfColuna;
+    private TableColumn<Usuario, String> cpfColuna;
     @FXML
-    private TableColumn<Historico, String> refeicoesColuna;
+    private TableColumn<Usuario, String> refeicoesColuna;
     @FXML
-    private TableColumn<Historico, String> eventoColuna;
+    private TableColumn<Usuario, String> eventosColuna;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         nomeColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
         cpfColuna.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-        eventoColuna.setCellValueFactory(new PropertyValueFactory<>("evento"));
+        eventosColuna.setCellValueFactory(new PropertyValueFactory<>("eventos"));
         refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("refeicoes"));
 
-        tabela.setItems(historico());
+        tabela.setItems((historico()));
+
+        tabela.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupPerfil.fxml"));
+                    Parent root = loader.load();
+                    PerfilController perfilController = loader.getController();
+
+                    perfilController.mostrarInformacoesUsuario(newSelection);
+
+                    Stage popupStage = new Stage();
+                    popupStage.setTitle("Perfil");
+                    popupStage.setScene(new Scene(root));
+                    popupStage.setResizable(false);
+                    popupStage.initModality(Modality.APPLICATION_MODAL);
+                    popupStage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
-    private ObservableList<Historico> historico() {
+    private ObservableList<Usuario> historico() {
         return FXCollections.observableArrayList(
-                new Historico("Daniel", "12345678910", 1, "Evento 1"),
-                new Historico("Rodrigo", "12345678910", 1, "Evento 1"),
-                new Historico("Kaiky", "12345678910", 1, "Evento 1"),
-                new Historico("Vitorio", "12345678910", 1, "Evento 1"),
-                new Historico("Anderson", "12345678910", 1, "Evento 1"),
-                new Historico("Rodrigo", "12345678910", 1, "Evento 1"));
+                new Usuario(1, "Daniel", "12345678910", 1, "Evento 1"),
+                new Usuario(2, "Rodrigo", "12345678910", 1, "Evento 1"),
+                new Usuario(3, "Kaiky", "12345678910", 1, "Evento 1"),
+                new Usuario(4, "Vitorio", "12345678910", 1, "Evento 1"),
+                new Usuario(5, "Anderson", "12345678910", 1, "Evento 1"),
+                new Usuario(6, "Rodrigo", "12345678910", 1, "Evento 1"));
     }
 
     @FXML

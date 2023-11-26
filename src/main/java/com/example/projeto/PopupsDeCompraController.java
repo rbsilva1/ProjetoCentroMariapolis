@@ -1,19 +1,15 @@
 package com.example.projeto;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Modality;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,10 +23,6 @@ public class PopupsDeCompraController implements javafx.fxml.Initializable {
 
     @FXML
     private Button confirm;
-
-    private Stage stage;
-    private Scene scene;
-
 
     @FXML
     void confirmarCompra(ActionEvent event) throws IOException {

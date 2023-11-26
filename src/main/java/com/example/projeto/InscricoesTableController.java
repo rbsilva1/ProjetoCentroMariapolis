@@ -16,22 +16,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class InscricoesTableController implements javafx.fxml.Initializable {
   @FXML
-  private TableView<Inscricoes> tabela;
+  private TableView<Usuario> tabela;
   @FXML
-  private TableColumn<Inscricoes, Integer> idColuna;
+  private TableColumn<Usuario, Integer> idColuna;
   @FXML
-  private TableColumn<Inscricoes, String> nomeColuna;
+  private TableColumn<Usuario, String> nomeColuna;
   @FXML
-  private TableColumn<Inscricoes, String> cpfColuna;
+  private TableColumn<Usuario, String> cpfColuna;
   @FXML
-  private TableColumn<Inscricoes, String> refeicoesColuna;
+  private TableColumn<Usuario, String> refeicoesColuna;
   @FXML
-  private TableColumn<Inscricoes, String> eventosColuna;
+  private TableColumn<Usuario, String> eventosColuna;
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -42,18 +43,39 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
     eventosColuna.setCellValueFactory(new PropertyValueFactory<>("eventos"));
 
     tabela.setItems(listaDeInscricoes());
+
+    tabela.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+      if (newSelection != null) {
+        try {
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupPerfil.fxml"));
+          Parent root = loader.load();
+          PerfilController perfilController = loader.getController();
+          
+          perfilController.mostrarInformacoesUsuario(newSelection);
+          
+          Stage popupStage = new Stage();
+          popupStage.setTitle("Perfil");
+          popupStage.setScene(new Scene(root));
+          popupStage.setResizable(false);
+          popupStage.initModality(Modality.APPLICATION_MODAL);
+          popupStage.show();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+    });
   }
 
-  private ObservableList<Inscricoes> listaDeInscricoes() {
+  private ObservableList<Usuario> listaDeInscricoes() {
     return FXCollections.observableArrayList(
-        new Inscricoes(1, "Daniel", "12345678910", 1, "Evento 1"),
-        new Inscricoes(2, "Rodrigo", "12345678910", 1, "Evento 1"),
-        new Inscricoes(3, "Kaiky", "12345678910", 1, "Evento 1"),
-        new Inscricoes(4, "Vitorio", "12345678910", 1, "Evento 1"),
-        new Inscricoes(5, "Anderson", "12345678910", 1, "Evento 1"),
-        new Inscricoes(6, "Rodrigo", "12345678910", 1, "Evento 1"));
+        new Usuario(1, "Daniel", "12345678910", 1, "Evento 1"),
+        new Usuario(2, "Rodrigo", "12345678910", 1, "Evento 1"),
+        new Usuario(3, "Kaiky", "12345678910", 1, "Evento 1"),
+        new Usuario(4, "Vitorio", "12345678910", 1, "Evento 1"),
+        new Usuario(5, "Anderson", "12345678910", 1, "Evento 1"),
+        new Usuario(6, "Rodrigo", "12345678910", 1, "Evento 1"));
   }
-
+  
   private Scene scene;
   private Stage stage;
 
@@ -93,6 +115,7 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
     stage.setScene(scene);
     stage.show();
   }
+
   @FXML
   public void paginaEventos(ActionEvent event) throws IOException {
     Screen screen = Screen.getPrimary();

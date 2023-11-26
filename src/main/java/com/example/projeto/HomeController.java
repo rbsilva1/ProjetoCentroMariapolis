@@ -12,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.Popup;
 import javafx.stage.Modality;
 import java.io.IOException;
 
@@ -43,7 +42,6 @@ public class HomeController {
 
     private Scene scene;
     private Stage stage;
-    private Popup popup;
 
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
@@ -80,6 +78,7 @@ public class HomeController {
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     public void paginaEventos(ActionEvent event) throws IOException {
         Screen screen = Screen.getPrimary();
@@ -91,7 +90,6 @@ public class HomeController {
         stage.setScene(scene);
         stage.show();
     }
-
 
     @FXML
     public void verificarCPF(ActionEvent event) throws IOException {
@@ -110,8 +108,9 @@ public class HomeController {
             popupStage.show();
         }
     }
+
     @FXML
-    public void mascaraCPF(){
+    public void mascaraCPF() {
         Formatar_CPF verifica_entrada = new Formatar_CPF();
         verifica_entrada.setMask("###.###.###-##");
         verifica_entrada.setCaracteresValidos("0123456789");
