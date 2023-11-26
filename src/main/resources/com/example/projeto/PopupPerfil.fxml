@@ -36,7 +36,7 @@
         <Font name="System Bold" size="12.0" />
       </font>
     </Label>
-      <Label layoutX="191.0" layoutY="179.0" text="Café" fx:id="refeicaoLabel">
+      <Label fx:id="refeicaoLabel" layoutX="191.0" layoutY="179.0" text="Café">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

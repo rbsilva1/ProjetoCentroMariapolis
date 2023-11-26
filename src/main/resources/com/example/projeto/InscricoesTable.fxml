@@ -57,7 +57,7 @@
                                 <Insets bottom="20" left="20" right="20" top="20" />
                             </padding>
 
-                            <TableView fx:id="tabela" onSort="#abrirHistorico">
+                            <TableView fx:id="tabela">
                                 <columnResizePolicy>
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                 </columnResizePolicy>
