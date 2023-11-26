@@ -35,64 +35,40 @@ public class InscricoesController {
   private Scene scene;
   private Stage stage;
 
-  @FXML
-  public void mostrarDetalhes(ActionEvent event) throws IOException {
+  public void funcaoAbrirFXML(ActionEvent event, String fxlm) throws IOException {
     Screen screen = Screen.getPrimary();
     Rectangle2D bounds = screen.getVisualBounds();
-    Parent root = FXMLLoader.load(getClass().getResource("InscricoesTable.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource(fxlm));
     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
     stage.setMaximized(true);
     stage.setScene(scene);
     stage.show();
+  }
+
+  @FXML
+  public void mostrarDetalhes(ActionEvent event) throws IOException {
+    funcaoAbrirFXML(event, "InscricoesTable.fxml");
   }
 
   @FXML
   public void abrirInscricoes(ActionEvent event) throws IOException {
-    Screen screen = Screen.getPrimary();
-    Rectangle2D bounds = screen.getVisualBounds();
-    Parent root = FXMLLoader.load(getClass().getResource("Inscricoes.fxml"));
-    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-    stage.setMaximized(true);
-    stage.setScene(scene);
-    stage.show();
+    funcaoAbrirFXML(event, "Inscricoes.fxml");
   }
 
   @FXML
   public void abrirHistorico(ActionEvent event) throws IOException {
-    Screen screen = Screen.getPrimary();
-    Rectangle2D bounds = screen.getVisualBounds();
-    Parent root = FXMLLoader.load(getClass().getResource("Historico.fxml"));
-    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-    stage.setMaximized(true);
-    stage.setScene(scene);
-    stage.show();
+    funcaoAbrirFXML(event, "Historico.fxml");
   }
 
   @FXML
   public void voltarTelaInicial(ActionEvent event) throws IOException {
-    Screen screen = Screen.getPrimary();
-    Rectangle2D bounds = screen.getVisualBounds();
-    Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-    stage.setMaximized(true);
-    stage.setScene(scene);
-    stage.show();
+    funcaoAbrirFXML(event, "Home.fxml");
   }
 
   @FXML
   public void paginaEventos(ActionEvent event) throws IOException {
-    Screen screen = Screen.getPrimary();
-    Rectangle2D bounds = screen.getVisualBounds();
-    Parent root = FXMLLoader.load(getClass().getResource("Eventos.fxml"));
-    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-    stage.setMaximized(true);
-    stage.setScene(scene);
-    stage.show();
+    funcaoAbrirFXML(event, "Eventos.fxml");
   }
 
   @FXML 
@@ -105,9 +81,9 @@ public class InscricoesController {
     popupStage.setScene(new Scene(root));
     popupStage.setResizable(false);
     popupStage.show();
+    
     PauseTransition delay = new PauseTransition(Duration.seconds(3));
     delay.setOnFinished(event -> popupStage.close());
-
     delay.play();
   }
 
