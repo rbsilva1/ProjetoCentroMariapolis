@@ -15,7 +15,6 @@ import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.animation.PauseTransition;
 
 public class InscricoesController {
   @FXML
