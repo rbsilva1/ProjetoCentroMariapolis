@@ -18,7 +18,6 @@ public class Application extends javafx.application.Application {
         Rectangle2D bounds = screen.getVisualBounds();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), bounds.getWidth(), bounds.getHeight());
-        
         stage.setMaximized(true);
         stage.setTitle("Projeto Centro Mariápolis!");
         stage.setScene(scene);

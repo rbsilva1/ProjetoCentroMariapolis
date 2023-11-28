@@ -50,7 +50,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="500.0" layoutY="77.0" prefHeight="221.0" prefWidth="434.0" style="-fx-background-color: #ffffff; -fx-border-radius: 40px;" AnchorPane.leftAnchor="500.0">
+            <AnchorPane layoutX="500.0" layoutY="76.0" prefHeight="221.0" prefWidth="434.0" style="-fx-background-color: #ffffff; -fx-border-radius: 40px;" AnchorPane.leftAnchor="511.0">
                <children>
                   <Label layoutX="47.0" layoutY="12.0" text="Leitor de Código de Barras">
                      <font>
@@ -71,7 +71,7 @@
                      </font>
                   </Button>
                   <Button fx:id="lupa" layoutX="343.0" layoutY="125.0" mnemonicParsing="false" onAction="#verificarCPF" style="-fx-background-color: 0000; -fx-cursor: hand;" />
-                  <ImageView fitHeight="18.0" fitWidth="21.0" layoutX="338.0" layoutY="129.0">
+                  <ImageView fitHeight="20.0" fitWidth="24.0" layoutX="339.0" layoutY="128.0">
                      <image>
                         <Image url="@lupa.png" />
                      </image>

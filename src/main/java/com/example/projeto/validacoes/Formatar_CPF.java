@@ -12,6 +12,7 @@ public class Formatar_CPF {
     private String mask;
 
     public Formatar_CPF() {
+
         mf = new MaskFormatter();
     }
 
