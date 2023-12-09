@@ -9,15 +9,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class InscricoesTableController implements javafx.fxml.Initializable {
@@ -50,9 +47,9 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
           FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupPerfil.fxml"));
           Parent root = loader.load();
           PerfilController perfilController = loader.getController();
-          
+
           perfilController.mostrarInformacoesUsuario(newSelection);
-          
+
           Stage popupStage = new Stage();
           popupStage.setTitle("Perfil");
           popupStage.setScene(new Scene(root));
@@ -75,39 +72,25 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
         new Usuario(5, "Anderson", "12345678910", 1, "Evento 1"),
         new Usuario(6, "Rodrigo", "12345678910", 1, "Evento 1"));
   }
-  
-  private Scene scene;
-  private Stage stage;
-
-  public void funcaoAbrirFXML(ActionEvent event, String fxlm) throws IOException {
-    Screen screen = Screen.getPrimary();
-    Rectangle2D bounds = screen.getVisualBounds();
-    Parent root = FXMLLoader.load(getClass().getResource(fxlm));
-    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-    stage.setMaximized(true);
-    stage.setScene(scene);
-    stage.show();
-  }
 
   @FXML
   public void abrirInscricoes(ActionEvent event) throws IOException {
-    funcaoAbrirFXML(event, "Inscricoes.fxml");
+    AbrirFXML.abrirFXML(event, "Inscricoes.fxml");
   }
 
   @FXML
   public void abrirHistorico(ActionEvent event) throws IOException {
-    funcaoAbrirFXML(event, "Historico.fxml");
+    AbrirFXML.abrirFXML(event, "Historico.fxml");
   }
 
   @FXML
   public void voltarTelaInicial(ActionEvent event) throws IOException {
-    funcaoAbrirFXML(event, "Home.fxml");
+    AbrirFXML.abrirFXML(event, "Home.fxml");
   }
 
   @FXML
   public void paginaEventos(ActionEvent event) throws IOException {
-    funcaoAbrirFXML(event, "Eventos.fxml");
+    AbrirFXML.abrirFXML(event, "Eventos.fxml");
   }
 
 }

@@ -4,13 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,14 +21,7 @@ public class PopupsDeCompraController implements javafx.fxml.Initializable {
 
     @FXML
     void confirmarCompra(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("PopDeCompraEfetuada.fxml"));
-        Parent root = loader.load();
-        Stage popupStage = new Stage();
-        popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Compra !");
-        popupStage.setScene(new Scene(root));
-        popupStage.setResizable(false);
-        popupStage.show();
+        AbrirPopup.abrirPopup(event, "PopDeCompraEfetuada.fxml", "Compra !");
     }
 
     @FXML

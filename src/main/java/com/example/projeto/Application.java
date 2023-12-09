@@ -11,7 +11,7 @@ public class Application extends javafx.application.Application {
     public static void main(String[] args) {
         launch();
     }
-    
+
     @Override
     public void start(Stage stage) throws IOException {
         Screen screen = Screen.getPrimary();
