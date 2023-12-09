@@ -2,9 +2,23 @@ package com.example.projeto;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
 import java.io.IOException;
 
 public class EventosController {
+
+    @FXML
+    private Button botaoHistorico1;
+
+    @FXML
+    private Button inscricoes;
+
+    @FXML
+    private Button paginaEventos;
+
+    @FXML
+    private Button paginainicial;
 
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
