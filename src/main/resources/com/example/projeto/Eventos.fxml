@@ -128,7 +128,7 @@
                   </Button>
                </children>
             </AnchorPane>
-            <Button fx:id="CcriariEvento" layoutX="1162.0" layoutY="84.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Criari Evento +" textFill="WHITE">
+            <Button fx:id="criarEvento" layoutX="1162.0" layoutY="84.0" mnemonicParsing="false" onAction="#criarEvento" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Criari Evento +" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
