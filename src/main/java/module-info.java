@@ -1,9 +1,9 @@
-module com.example.projeto {
+module br.upe {
     requires transitive javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
 
-    opens com.example.projeto to javafx.fxml;
-    exports com.example.projeto;
+    opens br.upe to javafx.fxml;
+    exports br.upe;
 }
