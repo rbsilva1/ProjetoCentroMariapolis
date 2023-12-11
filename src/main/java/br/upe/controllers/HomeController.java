@@ -1,15 +1,13 @@
 package br.upe.controllers;
 
+import static br.upe.utils.AbrirFXML.abrirFXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.Modality;
 
@@ -42,55 +40,24 @@ public class HomeController {
     @FXML
     private Button paginainicial;
 
-    private Scene scene;
-    private Stage stage;
-
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("/br/upe/resources/FXML/Historico.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
+        abrirFXML(event, "/br/upe/resources/FXML/Historico.fxml");
     }
 
     @FXML
     public void abrirInscricoes(ActionEvent event) throws IOException {
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("/br/upe/resources/FXML/Inscricoes.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
+        abrirFXML(event, "/br/upe/resources/FXML/Inscricoes.fxml");
     }
 
     @FXML
     public void voltarTelaInicial(ActionEvent event) throws IOException {
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("/br/upe/resources/FXML/Home.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
+        abrirFXML(event, "/br/upe/resources/FXML/Home.fxml");
     }
 
     @FXML
     public void paginaEventos(ActionEvent event) throws IOException {
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("/br/upe/resources/FXML/Eventos.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
+        abrirFXML(event, "/br/upe/resources/FXML/Eventos.fxml");
     }
 
     @FXML

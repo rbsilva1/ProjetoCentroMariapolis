@@ -5,14 +5,12 @@ import javafx.scene.control.TextField;
 import javax.swing.text.MaskFormatter;
 
 public class Formatar_CPF {
-
     private final MaskFormatter mf;
     private TextField tf;
     private String CaracteresValidos;
     private String mask;
 
     public Formatar_CPF() {
-
         mf = new MaskFormatter();
     }
 
