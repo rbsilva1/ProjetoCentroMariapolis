@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="224.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projeto.CodigoInvalidoController">
+   <children>
+      <ImageView fitHeight="49.0" fitWidth="55.0" layoutX="157.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/error.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="57.0" layoutY="121.0" prefHeight="32.0" prefWidth="248.0" text="Código de barras inválido" textAlignment="CENTER" textFill="#426da7">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="119.0" layoutY="154.0" text="Insira o CPF para validar" />
+   </children>
+</AnchorPane>
