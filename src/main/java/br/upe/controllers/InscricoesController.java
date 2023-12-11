@@ -32,32 +32,32 @@ public class InscricoesController {
 
   @FXML
   public void mostrarDetalhes(ActionEvent event) throws IOException {
-    AbrirFXML.abrirFXML(event, "InscricoesTable.fxml");
+    AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/InscricoesTable.fxml");
   }
 
   @FXML
   public void abrirInscricoes(ActionEvent event) throws IOException {
-    AbrirFXML.abrirFXML(event, "Inscricoes.fxml");
+    AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Inscricoes.fxml");
   }
 
   @FXML
   public void abrirHistorico(ActionEvent event) throws IOException {
-    AbrirFXML.abrirFXML(event, "Historico.fxml");
+    AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Historico.fxml");
   }
 
   @FXML
   public void voltarTelaInicial(ActionEvent event) throws IOException {
-    AbrirFXML.abrirFXML(event, "Home.fxml");
+    AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Home.fxml");
   }
 
   @FXML
   public void paginaEventos(ActionEvent event) throws IOException {
-    AbrirFXML.abrirFXML(event, "Eventos.fxml");
+    AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Eventos.fxml");
   }
 
   @FXML
   void abrirPopupCarregando() throws IOException {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupDeCarregamento.fxml"));
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/upe/resources/FXML/PopupDeCarregamento.fxml"));
     Parent root = loader.load();
     Stage popupStage = new Stage();
     popupStage.initModality(Modality.APPLICATION_MODAL);

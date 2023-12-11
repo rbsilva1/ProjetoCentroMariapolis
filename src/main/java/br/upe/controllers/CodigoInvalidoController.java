@@ -15,7 +15,7 @@ public class CodigoInvalidoController {
 
     @FXML
     void onClick(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Home.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Home.fxml");
     }
 
 }

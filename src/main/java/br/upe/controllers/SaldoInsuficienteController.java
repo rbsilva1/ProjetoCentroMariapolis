@@ -19,11 +19,11 @@ public class SaldoInsuficienteController {
 
     @FXML
     void abrirPagamentos(ActionEvent event) throws IOException {
-        AbrirPopup.abrirPopup(event, "PopupDeCompra.fxml", "Compra !");
+        AbrirPopup.abrirPopup(event, "/br/upe/resources/FXML/PopupDeCompra.fxml", "Compra !");
     }
 
     @FXML
     void voltarTela(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Home.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Home.fxml");
     }
 }

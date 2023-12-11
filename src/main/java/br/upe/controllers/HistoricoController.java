@@ -78,7 +78,7 @@ public class HistoricoController implements javafx.fxml.Initializable {
         tabela.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupPerfil.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/upe/resources/FXML/PopupPerfil.fxml"));
                     Parent root = loader.load();
                     PerfilController perfilController = loader.getController();
 
@@ -109,22 +109,22 @@ public class HistoricoController implements javafx.fxml.Initializable {
 
     @FXML
     public void abrirInscricoes(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Inscricoes.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Inscricoes.fxml");
     }
 
     @FXML
     public void paginaEventos(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Eventos.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Eventos.fxml");
     }
 
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Historico.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Historico.fxml");
     }
 
     @FXML
     public void voltarTelaInicial(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Home.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Home.fxml");
     }
 
 }

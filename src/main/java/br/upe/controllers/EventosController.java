@@ -27,22 +27,22 @@ public class EventosController {
 
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Historico.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Historico.fxml");
     }
 
     @FXML
     public void abrirInscricoes(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Inscricoes.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Inscricoes.fxml");
     }
 
     @FXML
     public void voltarTelaInicial(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "Home.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Home.fxml");
     }
 
     @FXML
     public void criarEvento(ActionEvent event) throws IOException {
-        AbrirFXML.abrirFXML(event, "CriarEvento.fxml");
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/CriarEvento.fxml");
     }
 
 }

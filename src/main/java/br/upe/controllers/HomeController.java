@@ -49,7 +49,7 @@ public class HomeController {
     public void abrirHistorico(ActionEvent event) throws IOException {
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("Historico.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/upe/resources/FXML/Historico.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
         stage.setMaximized(true);
@@ -61,7 +61,7 @@ public class HomeController {
     public void abrirInscricoes(ActionEvent event) throws IOException {
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("Inscricoes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/upe/resources/FXML/Inscricoes.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
         stage.setMaximized(true);
@@ -73,7 +73,7 @@ public class HomeController {
     public void voltarTelaInicial(ActionEvent event) throws IOException {
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/upe/resources/FXML/Home.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
         stage.setMaximized(true);
@@ -85,7 +85,7 @@ public class HomeController {
     public void paginaEventos(ActionEvent event) throws IOException {
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
-        Parent root = FXMLLoader.load(getClass().getResource("Eventos.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/upe/resources/FXML/Eventos.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
         stage.setMaximized(true);
@@ -100,7 +100,7 @@ public class HomeController {
         if (cpfValido) {
             // Se o CPF for válido chamar as funções necessárias!
         } else {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("PopupErroCpf.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/upe/resources/FXML/PopupErroCpf.fxml"));
             Parent root = loader.load();
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);

@@ -23,7 +23,7 @@ public class PopupsDeCompraController implements javafx.fxml.Initializable {
 
     @FXML
     void confirmarCompra(ActionEvent event) throws IOException {
-        AbrirPopup.abrirPopup(event, "PopDeCompraEfetuada.fxml", "Compra !");
+        AbrirPopup.abrirPopup(event, "/br/upe/resources/FXML/PopDeCompraEfetuada.fxml", "Compra !");
     }
 
     @FXML
