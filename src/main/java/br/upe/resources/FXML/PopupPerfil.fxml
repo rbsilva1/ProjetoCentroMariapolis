@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="219.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.upe.controllers.PerfilController">
+  <children>
+      <BorderPane layoutX="272.0" layoutY="77.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: ffff; -fx-border-color: rgba(66, 109, 167, 1); -fx-border-width: 2; -fx-border-radius: 15;">
+         <center>
+          <Label fx:id="eventoLabel" text="Eventos" BorderPane.alignment="CENTER">
+            <font>
+              <Font name="System Bold" size="12.0" />
+            </font>
+          </Label>
+         </center></BorderPane>
+      <BorderPane layoutX="150.0" layoutY="77.0" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: ffff; -fx-border-color: rgba(66, 109, 167, 1); -fx-border-width: 2; -fx-border-radius: 15;">
+         <center>
+          <Label fx:id="cpfLabel" text="CPF" BorderPane.alignment="CENTER">
+            <font>
+              <Font name="System Bold" size="12.0" />
+            </font>
+          </Label>
+         </center>
+      </BorderPane>
+      <BorderPane layoutX="27.0" layoutY="77.0" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: ffff; -fx-border-color: rgba(66, 109, 167, 1); -fx-border-width: 2; -fx-border-radius: 15;" />
+      <BorderPane layoutX="26.0" layoutY="150.0" prefHeight="58.0" prefWidth="341.0" style="-fx-border-radius: 15; -fx-background-color: ffff; -fx-border-color: rgba(66, 109, 167, 1); -fx-border-width: 2;" />
+    <Label layoutX="136.0" layoutY="22.0" text="Perfil Usuário" textFill="#426da7">
+      <font>
+        <Font name="System Bold" size="20.0" />
+      </font>
+    </Label>
+    <Label fx:id="nomeLabel" layoutX="67.0" layoutY="83.0" text="Nome">
+      <font>
+        <Font name="System Bold" size="12.0" />
+      </font>
+    </Label>
+    <Label layoutX="40.0" layoutY="170.0" text="Saldo de Refeições">
+      <font>
+        <Font name="System Bold" size="12.0" />
+      </font>
+    </Label>
+    <Label layoutX="191.0" layoutY="152.0" text="Café">
+      <font>
+        <Font name="System Bold" size="12.0" />
+      </font>
+    </Label>
+      <Label fx:id="refeicaoLabel" layoutX="191.0" layoutY="179.0" text="Café">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="60.0" text="Nome:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="163.0" layoutY="60.0" text="CPF:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="282.0" layoutY="60.0" text="Eventos:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+  </children>
+</AnchorPane>

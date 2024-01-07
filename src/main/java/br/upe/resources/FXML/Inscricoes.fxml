@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.upe.controllers.InscricoesController">
+  <children>
+    <AnchorPane prefHeight="403.0" prefWidth="1440.0" style="-fx-background-color: #E8B0B069;">
+         <children>
+            <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
+               <children>
+                  <Button fx:id="botaoPaginaInicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botaoPaginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" onAction="#paginaEventos" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="botaoInscrições" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirInscricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Regular" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="136.0" layoutY="21.0" prefHeight="60.0" prefWidth="575.0" text="Centro Mariápolis Santa Maria" textFill="WHITE">
+                     <font>
+                        <Font name="Reem Kufi Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="72.0" fitWidth="79.0" layoutX="59.0" layoutY="16.0">
+                     <image>
+                        <Image url="@../images/logo-centro.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="45.0" layoutY="135.0" prefHeight="530.0" prefWidth="1351.0" style="-fx-background-color: ffff; -fx-background-radius:40px;" AnchorPane.rightAnchor="44.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cafe-da-manha.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="46.0" layoutY="131.0" prefWidth="130.0" text="Café da manhã">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Line endX="1119.0" layoutX="228.0" layoutY="190.0" startX="-224.0" />
+                  <Line endX="1125.0" layoutX="225.0" layoutY="376.0" startX="-224.0" />
+                  <ImageView fitHeight="124.0" fitWidth="118.0" layoutX="52.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/almoco.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="84.0" layoutY="330.0" prefHeight="27.0" prefWidth="102.0" text="Almoço">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="124.0" fitWidth="150.0" layoutX="49.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/janta.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="87.0" layoutY="511.0" text="Janta">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="49.0" prefHeight="88.0" prefWidth="456.0" text="XX Pessoas estão previstas no café da manhã">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="214.0" layoutY="242.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas estão previstas no almoço">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-100.0" endY="143.0" layoutX="810.0" layoutY="207.0" startX="-100.0" />
+                  <Line endX="-100.0" endY="210.0" layoutX="811.0" layoutY="-41.0" startX="-100.0" startY="56.0" />
+                  <Line endX="-100.5" endY="144.0" layoutX="811.0" layoutY="383.0" startX="-100.5" startY="15.0" />
+                  <Label layoutX="214.0" layoutY="413.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas estão previstas na janta">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="791.0" layoutY="49.0" prefHeight="88.0" prefWidth="469.0" text="XX Pessoas entraram no refeitório para o café da manhã">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="791.0" layoutY="242.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas entraram no refeitório no almoço">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="791.0" layoutY="413.0" prefHeight="88.0" prefWidth="387.0" text="XX Pessoas entraram no refeitório na janta">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="detalhesCafe" layoutX="1151.0" layoutY="15.0" mnemonicParsing="false" onAction="#mostrarDetalhes" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Detalhes - Café da manhã" textFill="WHITE" />
+                  <Button fx:id="detalhesAlmoco" layoutX="1151.0" layoutY="214.0" mnemonicParsing="false" onAction="#mostrarDetalhes" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Detalhes - Almoço" textFill="WHITE" />
+                  <Button fx:id="detalhesJanta" layoutX="1151.0" layoutY="399.0" mnemonicParsing="false" onAction="#mostrarDetalhes" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Detalhes - Janta" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="BotaoImportar" layoutX="788.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Importar" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="BotaoExportar" layoutX="999.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Exportar" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButaoAtualizar" layoutX="1211.0" layoutY="97.0" mnemonicParsing="false" onAction="#abrirPopupCarregando" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Atualizar" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+    </AnchorPane>
+  </children>
+</StackPane>
