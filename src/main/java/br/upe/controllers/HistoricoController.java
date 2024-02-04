@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import br.upe.models.Usuario;
-import br.upe.models.UsuarioDAO;
+import br.upe.repositories.UsuarioRepositorio;
 import br.upe.utils.AbrirFXML;
 
 public class HistoricoController implements javafx.fxml.Initializable {
@@ -100,7 +100,7 @@ public class HistoricoController implements javafx.fxml.Initializable {
     }
 
     private ObservableList<Usuario> historico() {
-        return FXCollections.observableArrayList(UsuarioDAO.getInstance().buscarTodos());
+        return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().buscarTodos());
     }
 
     @FXML

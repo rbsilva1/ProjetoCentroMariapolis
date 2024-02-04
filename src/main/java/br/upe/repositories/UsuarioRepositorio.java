@@ -1,8 +1,10 @@
-package br.upe.models;
+package br.upe.repositories;
 
 import java.util.ArrayList;
 
-public class UsuarioRepositorio {
+import br.upe.models.Usuario;
+
+public class UsuarioRepositorio implements IUsuarioRepositorio {
   private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
   {
@@ -12,6 +14,10 @@ public class UsuarioRepositorio {
     this.usuarios.add(new Usuario(4, "Vitorio", "12345678910", 1, "Evento 1"));
     this.usuarios.add(new Usuario(5, "Anderson", "12345678910", 1, "Evento 1"));
     this.usuarios.add(new Usuario(6, "Rodrigo", "12345678910", 1, "Evento 1"));
+  }
+
+  public static UsuarioRepositorio getInstance() {
+    return new UsuarioRepositorio();
   }
 
   public ArrayList<Usuario> buscarTodos() {
