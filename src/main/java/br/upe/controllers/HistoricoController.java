@@ -22,6 +22,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import br.upe.models.Usuario;
+import br.upe.repositories.UsuarioRepositorio;
 import br.upe.utils.AbrirFXML;
 
 public class HistoricoController implements javafx.fxml.Initializable {
@@ -78,7 +79,8 @@ public class HistoricoController implements javafx.fxml.Initializable {
         tabela.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/upe/resources/FXML/PopupPerfil.fxml"));
+                    FXMLLoader loader = new FXMLLoader(
+                            getClass().getResource("/br/upe/resources/FXML/PopupPerfil.fxml"));
                     Parent root = loader.load();
                     PerfilController perfilController = loader.getController();
 
@@ -98,13 +100,7 @@ public class HistoricoController implements javafx.fxml.Initializable {
     }
 
     private ObservableList<Usuario> historico() {
-        return FXCollections.observableArrayList(
-                new Usuario(1, "Daniel", "12345678910", 1, "Evento 1"),
-                new Usuario(2, "Rodrigo", "12345678910", 1, "Evento 1"),
-                new Usuario(3, "Kaiky", "12345678910", 1, "Evento 1"),
-                new Usuario(4, "Vitorio", "12345678910", 1, "Evento 1"),
-                new Usuario(5, "Anderson", "12345678910", 1, "Evento 1"),
-                new Usuario(6, "Rodrigo", "12345678910", 1, "Evento 1"));
+        return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().buscarTodos());
     }
 
     @FXML

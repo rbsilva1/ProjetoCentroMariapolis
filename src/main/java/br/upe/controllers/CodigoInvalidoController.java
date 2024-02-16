@@ -9,7 +9,6 @@ import java.io.IOException;
 import br.upe.utils.AbrirFXML;
 
 public class CodigoInvalidoController {
-
     @FXML
     private Button voltar;
 
@@ -17,5 +16,4 @@ public class CodigoInvalidoController {
     void onClick(ActionEvent event) throws IOException {
         AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Home.fxml");
     }
-
 }
