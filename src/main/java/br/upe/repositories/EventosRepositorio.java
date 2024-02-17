@@ -8,6 +8,8 @@ public class EventosRepositorio {
     public static EventosRepositorio instance;
     private ArrayList<Evento> eventos = new ArrayList<Evento>();
 
+    static int id = 0;
+
     public static EventosRepositorio getInstance() {
         if (instance == null) {
             instance = new EventosRepositorio();
@@ -26,8 +28,8 @@ public class EventosRepositorio {
     }
 
     // Retonar ultimo id
-    public int ultimoID() {
-        int id = eventos.getLast().getId();
+    public static int ultimoID() {
+        EventosRepositorio.id += 1;
         return id;
     }
 

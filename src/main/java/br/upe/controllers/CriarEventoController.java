@@ -14,7 +14,7 @@ import br.upe.utils.AbrirFXML;
 public class CriarEventoController {
 
     @FXML
-    private Button CriarEvento;
+    private Button criarEvento;
 
     @FXML
     private Button botaoHistorico1;
@@ -61,21 +61,25 @@ public class CriarEventoController {
     }
 
     @FXML
-    public void AdicionarEvento(ActionEvent event) throws IOException {
-        String horaC = horaChegada.getText();
-        String esta = estados.getText();
-        String horaS = horaSaída.getText();
-        String nomeE = nomeEvento.getText();
+    public void criarEvento(ActionEvent event) throws IOException {
+        try{
+            String horaC = horaChegada.getText();
+            String esta = estados.getText();
+            String horaS = horaSaída.getText();
+            String nomeE = nomeEvento.getText();
 
-        EventosRepositorio eventosRepositorio = new EventosRepositorio();
+            EventosRepositorio eventosRepositorio = new EventosRepositorio();
 
-        int id = eventosRepositorio.ultimoID();
+            int id = EventosRepositorio.ultimoID();
 
-        Evento evento = new Evento(id+1, nomeE, horaC, horaS, esta);
+            Evento evento = new Evento(id+1, nomeE, horaC, horaS, esta);
 
-        eventosRepositorio.CriarEventos(evento);
-
-        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        System.out.println(eventosRepositorio.buscarTodos());
+            eventosRepositorio.CriarEventos(evento);
+            System.out.println(eventosRepositorio.buscarTodos());
+            System.out.println(eventosRepositorio);
+        }
+        catch(Exception exception){
+        System.out.println(exception);
+        }
     }
 }

@@ -23,7 +23,7 @@ public class EventosController {
     private Button paginainicial;
 
     @FXML
-    private Button criarEvento;
+    private Button adicionarEvento;
 
     @FXML
     public void abrirHistorico(ActionEvent event) throws IOException {
@@ -41,7 +41,7 @@ public class EventosController {
     }
 
     @FXML
-    public void criarEvento(ActionEvent event) throws IOException {
+    public void adicionarEvento(ActionEvent event) throws IOException {
         AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/CriarEvento.fxml");
     }
 
