@@ -69,8 +69,8 @@ public class Usuario {
     return almoco.get();
   }
 
-  public SimpleIntegerProperty getJanta() {
-    return this.janta;
+  public int getJanta() {
+    return janta.get();
   }
 
   public String getData() {

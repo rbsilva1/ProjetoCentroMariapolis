@@ -6,8 +6,12 @@ import br.upe.models.Usuario;
 import static br.upe.utils.CPF_Validacao.validarCPF;
 
 public class UsuarioRepositorio {
-  public static UsuarioRepositorio instânciaRepositorio;
+  private static UsuarioRepositorio instânciaRepositorio;
   private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+
+  private UsuarioRepositorio() {
+    // Construtor privado para impedir instanciação direta.
+  }
 
   public static UsuarioRepositorio getInstance() {
     if (instânciaRepositorio == null) {
@@ -16,68 +20,82 @@ public class UsuarioRepositorio {
     return instânciaRepositorio;
   }
 
-  // Metódo de Criar os usuários e adicionar em um Array List
+  // Método para criar usuários e adicioná-los a uma lista
   public void criarUsuario(Usuario usuario) {
     boolean cpfValido = validarCPF(usuario.getCpf());
     if (cpfValido) {
       usuarios.add(usuario);
     } else {
-      System.out.println("Insira um CPF válido para criar o cadastro !\n");
+      System.out.println("Insira um CPF válido para criar o cadastro!\n");
     }
-
   }
 
-  // Metódo de Mostrar todos os clientes cadastrados
-  public Usuario MostrarUsuarios() {
+  // Método para mostrar todos os usuários cadastrados
+  public Usuario mostrarUsuarios() {
     if (usuarios.isEmpty()) {
-      System.out.println("Não há clientes cadastrados no Sistema !\n");
+      System.out.println("Não há clientes cadastrados no Sistema!\n");
+      
     }
-    for (int i = 0; i < usuarios.size(); i++) {
-      System.out.println(usuarios.get(i));
-      return usuarios.get(i);
+    for (Usuario usuario : usuarios) {
+      System.out.println(usuario);
+      return usuario;
     }
     return null;
   }
 
-  // Metodo de atualizar os dados do cliente, procurando atráves do CPF do cliente
+  // Método para atualizar os dados do usuário pelo CPF
   public void atualizarUsuario(String cpf, Usuario usuario) {
-    if (usuarios.isEmpty()) {
-      System.out.println("Não há clientes cadastrados no Sistema !\n");
-    }
+    boolean encontrado = false;
     for (int i = 0; i < usuarios.size(); i++) {
       if (usuarios.get(i).getCpf().equals(cpf)) {
         usuarios.set(i, usuario);
-        System.out.println("Dados atualizados com sucesso !\n");
-      } else {
-        System.out.println("Usuário não encontrado !\n");
+        System.out.println("Dados atualizados com sucesso!\n");
+        encontrado = true;
+        break;
       }
+    }
+    if (!encontrado) {
+      System.out.println("Usuário não encontrado!\n");
     }
   }
 
-  // Metodo de deletar o usuário, procurando atráves do CPF
+  // Método para deletar o usuário pelo CPF
   public void deletarUsuario(String cpf) {
-    if (usuarios.isEmpty()) {
-      System.out.println("Não há clientes cadastrados no Sistema !\n");
-    }
+    boolean encontrado = false;
     for (int i = 0; i < usuarios.size(); i++) {
       if (usuarios.get(i).getCpf().equals(cpf)) {
         usuarios.remove(i);
-        System.out.println("Cliente Removido com Sucesso !\n");
-      } else {
-        System.out.println("Cliente não encontrado !\n");
+        System.out.println("Cliente Removido com Sucesso!\n");
+        encontrado = true;
+        break;
       }
+    }
+    if (!encontrado) {
+      System.out.println("Cliente não encontrado!\n");
     }
   }
 
-  // Metodo de buscar o usuário especifico através do CPF
+  // Método para buscar um usuário pelo CPF
   public void buscarUsuario(String cpf) {
-    if (usuarios.isEmpty()) {
-      System.out.println("Não há clientes cadastrados no Sistema !\n");
-    }
-    for (int i = 0; i < usuarios.size(); i++) {
-      if (usuarios.get(i).getCpf().equals(cpf)) {
-        System.out.println(usuarios.get(i));
+    boolean encontrado = false;
+    for (Usuario usuario : usuarios) {
+      if (usuario.getCpf().equals(cpf)) {
+        System.out.println(usuario);
+        encontrado = true;
+        break;
       }
     }
+    if (!encontrado) {
+      System.out.println("Usuário não encontrado!\n");
+    }
+  }
+
+  // Métodos getter e setter para a lista de usuários
+  public ArrayList<Usuario> getUsuarios() {
+    return usuarios;
+  }
+
+  public void setUsuarios(ArrayList<Usuario> usuarios) {
+    this.usuarios = usuarios;
   }
 }

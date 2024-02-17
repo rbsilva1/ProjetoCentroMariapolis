@@ -69,10 +69,10 @@ public class HistoricoController implements javafx.fxml.Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nomeColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        cpfColuna.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-        eventosColuna.setCellValueFactory(new PropertyValueFactory<>("eventos"));
-        refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("refeicoes"));
+        nomeColuna.setCellValueFactory(new PropertyValueFactory<>("Nome"));
+        cpfColuna.setCellValueFactory(new PropertyValueFactory<>("CPF"));
+        eventosColuna.setCellValueFactory(new PropertyValueFactory<>("Eventos"));
+        refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("Refeições"));
 
         tabela.setItems((historico()));
 
@@ -100,7 +100,7 @@ public class HistoricoController implements javafx.fxml.Initializable {
     }
 
     private ObservableList<Usuario> historico() {
-        return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().MostrarUsuarios());
+        return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().getUsuarios());
     }
 
     @FXML

@@ -35,10 +35,10 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
-    nomeColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
-    cpfColuna.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-    refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("refeicoes"));
-    eventosColuna.setCellValueFactory(new PropertyValueFactory<>("eventos"));
+    nomeColuna.setCellValueFactory(new PropertyValueFactory<>("Nome"));
+    cpfColuna.setCellValueFactory(new PropertyValueFactory<>("CPF"));
+    refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("Refeições"));
+    eventosColuna.setCellValueFactory(new PropertyValueFactory<>("Eventos"));
 
     tabela.setItems(listaDeInscricoes());
 
@@ -66,7 +66,8 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
 
   private ObservableList<Usuario> listaDeInscricoes() {
     return FXCollections.observableArrayList(
-       new Usuario("10086875450", "Vitório", 3, 3,3,"23102003"));
+       new Usuario("10086875450", "Vitório Fernandes de Amorim", 3, 3,3,"12/09/2002"));
+       
   }
 
   @FXML

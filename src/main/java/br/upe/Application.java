@@ -7,6 +7,9 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+import br.upe.models.Usuario;
+import br.upe.repositories.UsuarioRepositorio;
+
 public class Application extends javafx.application.Application {
     public static void main(String[] args) {
         launch();
