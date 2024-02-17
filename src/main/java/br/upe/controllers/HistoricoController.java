@@ -100,7 +100,7 @@ public class HistoricoController implements javafx.fxml.Initializable {
     }
 
     private ObservableList<Usuario> historico() {
-        return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().buscarTodos());
+        return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().MostrarUsuarios());
     }
 
     @FXML

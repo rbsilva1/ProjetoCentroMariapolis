@@ -5,52 +5,72 @@ import java.util.ArrayList;
 import br.upe.models.Usuario;
 
 public class UsuarioRepositorio {
-  public static UsuarioRepositorio instance;
+  public static UsuarioRepositorio instânciaRepositorio;
   private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
   public static UsuarioRepositorio getInstance() {
-    if (instance == null) {
-      instance = new UsuarioRepositorio();
+    if (instânciaRepositorio == null) {
+      instânciaRepositorio = new UsuarioRepositorio();
     }
-    return instance;
+    return instânciaRepositorio;
   }
 
-  public ArrayList<Usuario> buscarTodos() {
-    return this.usuarios;
+  // Metódo de Criar os usuários e adicionar em um Array List
+  public void criarUsuario(Usuario usuario) {
+    usuarios.add(usuario);
   }
 
-  public void salvar(Usuario usuario) {
-    this.usuarios.add(usuario);
-  }
-
-  public void deletar(Usuario usuario) {
-    this.usuarios.remove(usuario);
-  }
-
-  public void atualizar(Usuario usuario) {
-    for (int i = 0; i < this.usuarios.size(); i++) {
-      if (this.usuarios.get(i).getId() == usuario.getId()) {
-        this.usuarios.set(i, usuario);
-        break;
-      }
+  // Metódo de Mostrar todos os clientes cadastrados
+  public Usuario MostrarUsuarios() {
+    if (usuarios.isEmpty()) {
+      System.out.println("Não há clientes cadastrados no Sistema !\n");
     }
-  }
-
-  public Usuario buscarPorId(int id) {
-    for (Usuario usuario : this.usuarios) {
-      if (usuario.getId() == id) {
-        return usuario;
-      }
+    for (int i = 0; i < usuarios.size(); i++) {
+      System.out.println(usuarios.get(i));
+      return usuarios.get(i);
     }
     return null;
   }
 
-  public Usuario buscarPorCpf(String cpf) {
-    for (Usuario usuario : this.usuarios) {
-      if (usuario.getCpf().equals(cpf)) {
-        return usuario;
+  // Metodo de atualizar os dados do cliente, procurando atráves do CPF do cliente
+  public void atualizarUsuario(String cpf, Usuario usuario) {
+    if (usuarios.isEmpty()) {
+      System.out.println("Não há clientes cadastrados no Sistema !\n");
+    }
+    for (int i = 0; i < usuarios.size(); i++) {
+      if (usuarios.get(i).getCpf() == cpf) {
+        usuarios.set(i, usuario);
+        System.out.println("Dados atualizados com sucesso !\n");
+      } else {
+        System.out.println("Usuário não encontrado !\n");
       }
     }
-    return null;
+  }
+
+  // Metodo de deletar o usuário, procurando atráves do CPF
+  public void deletarUsuario(String cpf) {
+    if (usuarios.isEmpty()) {
+      System.out.println("Não há clientes cadastrados no Sistema !\n");
+    }
+    for (int i = 0; i < usuarios.size(); i++) {
+      if (usuarios.get(i).getCpf() == cpf) {
+        usuarios.remove(i);
+        System.out.println("Cliente Removido com Sucesso !\n");
+      } else {
+        System.out.println("Cliente não encontrado !\n");
+      }
+    }
+  }
+
+  // Metodo de buscar o usuário especifico através do CPF
+  public void buscarUsuario(String cpf) {
+    if (usuarios.isEmpty()) {
+      System.out.println("Não há clientes cadastrados no Sistema !\n");
+    }
+    for (int i = 0; i < usuarios.size(); i++) {
+      if (usuarios.get(i).getCpf() == cpf) {
+        System.out.println(usuarios.get(i));
+      }
+    }
   }
 }

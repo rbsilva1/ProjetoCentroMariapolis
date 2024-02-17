@@ -1,47 +1,40 @@
 package br.upe.models;
 
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.chart.PieChart.Data;
+import javafx.scene.input.DataFormat;
+import java.util.Objects;
 
 public class Usuario {
-  private final SimpleIntegerProperty id;
   private final SimpleStringProperty nome;
   private final SimpleStringProperty cpf;
-  private final SimpleIntegerProperty refeicoes;
-  private final SimpleStringProperty eventos;
+  private final SimpleIntegerProperty cafe;
+  private final SimpleIntegerProperty almoco;
+  private final SimpleIntegerProperty janta;
+  private Date data;
 
-  public Usuario(Integer id, String nome, String cpf, int refeicoes, String eventos) {
-    this.id = new SimpleIntegerProperty(id);
+  public Usuario(String cpf, String nome, int cafe, int almoco, int janta, String data) {
     this.nome = new SimpleStringProperty(nome);
     this.cpf = new SimpleStringProperty(cpf);
-    this.refeicoes = new SimpleIntegerProperty(refeicoes);
-    this.eventos = new SimpleStringProperty(eventos);
+    this.cafe = new SimpleIntegerProperty(cafe);
+    this.almoco = new SimpleIntegerProperty(almoco);
+    this.janta = new SimpleIntegerProperty(janta);
+    setData(data);
   }
 
-  public int getId() {
-    return id.get();
+  public void setData(String data) {
+    try {
+      this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+    } catch (ParseException e) {
+      System.out.println("Formato de data inválido. Use o formato dd/MM/yyyy.");
+    }
   }
 
-  public String getNome() {
-    return nome.get();
-  }
-
-  public String getCpf() {
-    return cpf.get();
-  }
-
-  public int getRefeicoes() {
-    return refeicoes.get();
-  }
-
-  public String getEventos() {
-    return eventos.get();
-  }
-
-  public void setId(int id) {
-    this.id.set(id);
-  }
-
+  // Setters
   public void setNome(String nome) {
     this.nome.set(nome);
   }
@@ -50,31 +43,41 @@ public class Usuario {
     this.cpf.set(cpf);
   }
 
-  public void setRefeicoes(int refeicoes) {
-    this.refeicoes.set(refeicoes);
+  public void setCafe(int cafe) {
+    this.cafe.set(cafe);
   }
 
-  public void setEventos(String eventos) {
-    this.eventos.set(eventos);
+  public void setAlmoco(int almoco) {
+    this.almoco.set(almoco);
   }
 
-  public SimpleIntegerProperty idProperty() {
-    return id;
+  public void setJanta(int janta) {
+    this.janta.set(janta);
   }
 
-  public SimpleStringProperty nomeProperty() {
-    return nome;
+  // Getters
+  public String getNome() {
+    return nome.get();
   }
 
-  public SimpleStringProperty cpfProperty() {
-    return cpf;
+  public String getCpf() {
+    return cpf.get();
   }
 
-  public SimpleIntegerProperty refeicoesProperty() {
-    return refeicoes;
+  public int getCafe() {
+    return cafe.get();
   }
 
-  public SimpleStringProperty eventosProperty() {
-    return eventos;
+  public int getAlmoco() {
+    return almoco.get();
+  }
+
+  public SimpleIntegerProperty getJanta() {
+    return this.janta;
+  }
+
+  public String getData() {
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    return sdf.format(this.data);
   }
 }

@@ -29,7 +29,7 @@ public class PerfilController {
   public void mostrarInformacoesUsuario(Usuario usuario) {
     nomeLabel.setText(usuario.getNome());
     cpfLabel.setText(usuario.getCpf());
-    eventoLabel.setText(usuario.getEventos());
-    refeicaoLabel.setText(String.valueOf(usuario.getRefeicoes()));
+    eventoLabel.setText(String.valueOf(usuario.getAlmoco()));
+    eventoLabel.setText(String.valueOf(usuario.getCafe()));
   }
 }
