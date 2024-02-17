@@ -13,29 +13,29 @@ public class Evento {
     public Evento(Integer id, String nome, String dataInicio, String dataFim, String createAt) {
         this.id = new SimpleIntegerProperty(id);
         this.nome = new SimpleStringProperty(nome);
-        this.dataInicio = new SimpleStringProperty();
-        this.dataFim = new SimpleStringProperty();
-        this.createAt = new SimpleStringProperty();
+        this.dataInicio = new SimpleStringProperty(dataInicio);
+        this.dataFim = new SimpleStringProperty(dataFim);
+        this.createAt = new SimpleStringProperty(createAt);
     }
 
-    public SimpleIntegerProperty getId() {
-        return id;
+    public int getId() {
+        return id.get();
     }
 
-    public SimpleStringProperty getNome() {
-        return nome;
+    public String getNome() {
+        return nome.get();
     }
 
-    public SimpleStringProperty getDataInicio() {
-        return dataInicio;
+    public String getDataInicio() {
+        return dataInicio.get();
     }
 
-    public SimpleStringProperty getDataFim() {
-        return dataFim;
+    public String getDataFim() {
+        return dataFim.get();
     }
 
-    public SimpleStringProperty getCreateAt() {
-        return createAt;
+    public String getCreateAt() {
+        return createAt.get();
     }
 
     public void setId(int id) {
