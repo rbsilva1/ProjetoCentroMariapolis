@@ -3,6 +3,7 @@ package br.upe.repositories;
 import java.util.ArrayList;
 
 import br.upe.models.Usuario;
+import static br.upe.utils.CPF_Validacao.validarCPF;
 
 public class UsuarioRepositorio {
   public static UsuarioRepositorio instânciaRepositorio;
@@ -17,7 +18,13 @@ public class UsuarioRepositorio {
 
   // Metódo de Criar os usuários e adicionar em um Array List
   public void criarUsuario(Usuario usuario) {
-    usuarios.add(usuario);
+    boolean cpfValido = validarCPF(usuario.getCpf());
+    if (cpfValido) {
+      usuarios.add(usuario);
+    } else {
+      System.out.println("Insira um CPF válido para criar o cadastro !\n");
+    }
+
   }
 
   // Metódo de Mostrar todos os clientes cadastrados
@@ -25,7 +32,7 @@ public class UsuarioRepositorio {
     if (usuarios.isEmpty()) {
       System.out.println("Não há clientes cadastrados no Sistema !\n");
     }
-    for (int i = 0; i < usuarios.size();i++) {
+    for (int i = 0; i < usuarios.size(); i++) {
       System.out.println(usuarios.get(i));
       return usuarios.get(i);
     }
