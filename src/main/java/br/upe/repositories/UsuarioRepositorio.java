@@ -25,7 +25,7 @@ public class UsuarioRepositorio {
     if (usuarios.isEmpty()) {
       System.out.println("Não há clientes cadastrados no Sistema !\n");
     }
-    for (int i = 0; i < usuarios.size(); i++) {
+    for (int i = 0; i < usuarios.size();i++) {
       System.out.println(usuarios.get(i));
       return usuarios.get(i);
     }
@@ -38,7 +38,7 @@ public class UsuarioRepositorio {
       System.out.println("Não há clientes cadastrados no Sistema !\n");
     }
     for (int i = 0; i < usuarios.size(); i++) {
-      if (usuarios.get(i).getCpf() == cpf) {
+      if (usuarios.get(i).getCpf().equals(cpf)) {
         usuarios.set(i, usuario);
         System.out.println("Dados atualizados com sucesso !\n");
       } else {
@@ -53,7 +53,7 @@ public class UsuarioRepositorio {
       System.out.println("Não há clientes cadastrados no Sistema !\n");
     }
     for (int i = 0; i < usuarios.size(); i++) {
-      if (usuarios.get(i).getCpf() == cpf) {
+      if (usuarios.get(i).getCpf().equals(cpf)) {
         usuarios.remove(i);
         System.out.println("Cliente Removido com Sucesso !\n");
       } else {
@@ -68,7 +68,7 @@ public class UsuarioRepositorio {
       System.out.println("Não há clientes cadastrados no Sistema !\n");
     }
     for (int i = 0; i < usuarios.size(); i++) {
-      if (usuarios.get(i).getCpf() == cpf) {
+      if (usuarios.get(i).getCpf().equals(cpf)) {
         System.out.println(usuarios.get(i));
       }
     }

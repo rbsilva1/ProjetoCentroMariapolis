@@ -5,9 +5,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.chart.PieChart.Data;
-import javafx.scene.input.DataFormat;
-import java.util.Objects;
 
 public class Usuario {
   private final SimpleStringProperty nome;
