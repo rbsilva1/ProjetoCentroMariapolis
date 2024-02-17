@@ -1,5 +1,8 @@
 package br.upe.models;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
@@ -8,14 +11,16 @@ public class Evento {
     private final SimpleStringProperty nome;
     private final SimpleStringProperty dataInicio;
     private final SimpleStringProperty dataFim;
-    private final SimpleStringProperty createAt;
+    private final SimpleStringProperty local;
+    private final String createAt;
 
-    public Evento(Integer id, String nome, String dataInicio, String dataFim, String createAt) {
+    public Evento(Integer id, String nome, String dataInicio, String dataFim, String local) {
         this.id = new SimpleIntegerProperty(id);
         this.nome = new SimpleStringProperty(nome);
         this.dataInicio = new SimpleStringProperty(dataInicio);
         this.dataFim = new SimpleStringProperty(dataFim);
-        this.createAt = new SimpleStringProperty(createAt);
+        this.createAt = DataAtual();
+        this.local = new SimpleStringProperty(local);
     }
 
     public int getId() {
@@ -35,7 +40,11 @@ public class Evento {
     }
 
     public String getCreateAt() {
-        return createAt.get();
+        return createAt;
+    }
+
+    public String getLocal() {
+        return local.get();
     }
 
     public void setId(int id) {
@@ -53,9 +62,16 @@ public class Evento {
     public void setDataFim(String dataFim) {
         this.dataFim.set(dataFim);
     }
-
-    public void setCreateAt(String createAt) {
-        this.createAt.set(createAt);
-    }
     
+    public void setLocal(String local) {
+        this.local.set(local);
+    }
+
+    public String DataAtual() {
+        LocalDateTime agora = LocalDateTime.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String dataHoraFormatada = agora.format(formato);
+
+        return dataHoraFormatada;
+    }
 }

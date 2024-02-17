@@ -7,6 +7,8 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import br.upe.models.Evento;
+import br.upe.repositories.EventosRepositorio;
 import br.upe.utils.AbrirFXML;
 
 public class CriarEventoController {
@@ -58,4 +60,22 @@ public class CriarEventoController {
         AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Home.fxml");
     }
 
+    @FXML
+    public void AdicionarEvento(ActionEvent event) throws IOException {
+        String horaC = horaChegada.getText();
+        String esta = estados.getText();
+        String horaS = horaSaída.getText();
+        String nomeE = nomeEvento.getText();
+
+        EventosRepositorio eventosRepositorio = new EventosRepositorio();
+
+        int id = eventosRepositorio.ultimoID();
+
+        Evento evento = new Evento(id+1, nomeE, horaC, horaS, esta);
+
+        eventosRepositorio.CriarEventos(evento);
+
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        System.out.println(eventosRepositorio.buscarTodos());
+    }
 }

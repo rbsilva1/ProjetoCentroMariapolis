@@ -25,6 +25,12 @@ public class EventosRepositorio {
         return this.eventos;
     }
 
+    // Retonar ultimo id
+    public int ultimoID() {
+        int id = eventos.getLast().getId();
+        return id;
+    }
+
     // Atualizar
     public void AtualizarEvento(Evento eventos) {
         for (int i = 0; i < this.eventos.size(); i++) {
