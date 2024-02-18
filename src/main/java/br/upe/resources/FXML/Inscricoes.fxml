@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.upe.controllers.InscricoesController" >
-         <top>
+      <top>
          <HBox style="-fx-background-color: #426DA7;" spacing="10"  alignment="CENTER_LEFT">
             <children>
                <ImageView fitHeight="72.0" fitWidth="79.0">
@@ -54,7 +54,7 @@
          </HBox>
       </top>      
    <center> 
-      <VBox style="-fx-background-color: #E8B0B069;"  >
+      <VBox style="-fx-background-color: #E8B0B069;" >
          <Pane prefHeight="30.0"/>
          <HBox alignment="CENTER_RIGHT" spacing="10">
             <Button fx:id="BotaoImportar" layoutX="788.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Importar" textFill="WHITE">
@@ -75,7 +75,7 @@
             <Pane prefWidth="5"/>
          </HBox>
          <Pane prefHeight="100"/>
-         <HBox alignment="CENTER ">
+         <HBox alignment="CENTER">
             <VBox>
                <HBox alignment="CENTER_LEFT" spacing="10">
                   <Pane prefWidth="100"/>
@@ -160,7 +160,6 @@
                <Button fx:id="detalhesJanta" layoutX="1151.0" layoutY="399.0" mnemonicParsing="false" onAction="#mostrarDetalhes" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Detalhes - Janta" textFill="WHITE" /> 
                <Pane prefHeight="20"/>
             </VBox>
-            
          </HBox> 
       </VBox>
    </center>
