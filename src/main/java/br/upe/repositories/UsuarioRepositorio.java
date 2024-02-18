@@ -9,10 +9,7 @@ public class UsuarioRepositorio {
   private static UsuarioRepositorio instânciaRepositorio;
   private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
-  private UsuarioRepositorio() {
-    // Construtor privado para impedir instanciação direta.
-  }
-
+  
   public static UsuarioRepositorio getInstance() {
     if (instânciaRepositorio == null) {
       instânciaRepositorio = new UsuarioRepositorio();

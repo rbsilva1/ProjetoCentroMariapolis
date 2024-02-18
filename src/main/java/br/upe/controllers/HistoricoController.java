@@ -63,16 +63,19 @@ public class HistoricoController implements javafx.fxml.Initializable {
     @FXML
     private TableColumn<Usuario, String> cpfColuna;
     @FXML
-    private TableColumn<Usuario, String> refeicoesColuna;
+    private TableColumn<Usuario, String> cafeColuna;
     @FXML
-    private TableColumn<Usuario, String> eventosColuna;
+    private TableColumn<Usuario, String> almocoColuna;
+    @FXML
+    private TableColumn<Usuario, String> jantaColuna;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nomeColuna.setCellValueFactory(new PropertyValueFactory<>("Nome"));
-        cpfColuna.setCellValueFactory(new PropertyValueFactory<>("CPF"));
-        eventosColuna.setCellValueFactory(new PropertyValueFactory<>("Eventos"));
-        refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("Refeições"));
+        nomeColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        cpfColuna.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        cafeColuna.setCellValueFactory(new PropertyValueFactory<>("cafe"));
+        almocoColuna.setCellValueFactory(new PropertyValueFactory<>("almoco"));
+        jantaColuna.setCellValueFactory(new PropertyValueFactory<>("janta"));
 
         tabela.setItems((historico()));
 
@@ -100,7 +103,11 @@ public class HistoricoController implements javafx.fxml.Initializable {
     }
 
     private ObservableList<Usuario> historico() {
-        return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().getUsuarios());
+        // Corrigir o jeito de adicionar no histórico e nas inscrições 
+        UsuarioRepositorio.getInstance().criarUsuario(new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3,3,"12/09/2002"));
+        System.out.println(UsuarioRepositorio.getInstance().getUsuarios());
+        return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().mostrarUsuarios());
+        
     }
 
     @FXML
