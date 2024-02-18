@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-import br.upe.fachadas.fachadaEvento;
+import br.upe.facades.fachadaEvento;
 import br.upe.utils.AbrirFXML;
 
 public class CriarEventoController {
@@ -70,9 +70,11 @@ public class CriarEventoController {
             fachadaEvento fachadaEvento = new fachadaEvento();
 
             fachadaEvento.criarNovoEvento(nomeE, horaC, horaS, esta);
+
+            AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Eventos.fxml");
         }
         catch(Exception exception){
-        System.out.println(exception);
+            System.out.println(exception);
         }
     }
 }

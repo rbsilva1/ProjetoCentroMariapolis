@@ -47,4 +47,13 @@ public class EventosRepositorio {
     public void DeletarEvento(Evento evento) {
         this.eventos.remove(evento);
     }
+
+    public Evento buscarPorID(int id) {
+        for (int i = 0; i < this.eventos.size(); i++) {
+            if (this.eventos.get(i).getId() == id) {
+                return this.eventos.get(i);
+            }
+        }
+        return null;
+    }
 }
