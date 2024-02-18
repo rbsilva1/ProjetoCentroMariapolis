@@ -22,7 +22,7 @@ public class InscricoesController {
   private Button inscricoes;
 
   @FXML
-  private Button paginainicial;
+  private Button paginaInicial;
 
   @FXML
   private Button detalhes;
