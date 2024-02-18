@@ -71,8 +71,8 @@ public class HistoricoController implements javafx.fxml.Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         nomeColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
         cpfColuna.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-        eventosColuna.setCellValueFactory(new PropertyValueFactory<>("eventos"));
-        refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("refeicoes"));
+        // eventosColuna.setCellValueFactory(new PropertyValueFactory<>("eventos"));
+        // refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("refeicoes"));
 
         tabela.setItems((historico()));
 
