@@ -77,4 +77,5 @@ public class Usuario {
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     return sdf.format(this.data);
   }
+
 }

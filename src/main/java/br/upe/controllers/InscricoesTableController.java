@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart.Data;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,24 +24,30 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
   @FXML
   private TableView<Usuario> tabela;
   @FXML
-  private TableColumn<Usuario, Integer> idColuna;
-  @FXML
   private TableColumn<Usuario, String> nomeColuna;
   @FXML
   private TableColumn<Usuario, String> cpfColuna;
   @FXML
-  private TableColumn<Usuario, String> refeicoesColuna;
+  private TableColumn<Usuario, String> cafeColuna;
   @FXML
-  private TableColumn<Usuario, String> eventosColuna;
+  private TableColumn<Usuario, String> almocoColuna;
+  @FXML
+  private TableColumn<Usuario, String> jantaColuna;
+  @FXML
+  private TableColumn<Usuario, Data> dataColuna;
+
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     nomeColuna.setCellValueFactory(new PropertyValueFactory<>("Nome"));
-    cpfColuna.setCellValueFactory(new PropertyValueFactory<>("CPF"));
-    refeicoesColuna.setCellValueFactory(new PropertyValueFactory<>("Refeições"));
-    eventosColuna.setCellValueFactory(new PropertyValueFactory<>("Eventos"));
+    cpfColuna.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+    cafeColuna.setCellValueFactory(new PropertyValueFactory<>("Cafe"));
+    almocoColuna.setCellValueFactory(new PropertyValueFactory<>("Almoco"));
+    jantaColuna.setCellValueFactory(new PropertyValueFactory<>("Janta"));
+    dataColuna.setCellValueFactory(new PropertyValueFactory<>("Data"));
 
     tabela.setItems(listaDeInscricoes());
+
 
     tabela.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
       if (newSelection != null) {
@@ -66,7 +73,7 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
 
   private ObservableList<Usuario> listaDeInscricoes() {
     return FXCollections.observableArrayList(
-       new Usuario("10086875450", "Vitório Fernandes de Amorim", 3, 3,3,"12/09/2002"),
+       new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3,3,"12/09/2002"),
        new Usuario("08973660420", "Vitório Fernandes de Amorim", 3, 3,3,"12/09/2002")
        );
        

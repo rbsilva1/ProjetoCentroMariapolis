@@ -62,11 +62,12 @@
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                 </columnResizePolicy>
                                 <columns>
-                                    <TableColumn fx:id="idColuna" maxWidth="40" minWidth="40" text="ID" />
                                     <TableColumn fx:id="nomeColuna" text="Nome" />
                                     <TableColumn fx:id="cpfColuna" maxWidth="200" minWidth="200" text="CPF" />
-                                    <TableColumn fx:id="refeicoesColuna" text="Refeições" />
-                                    <TableColumn fx:id="eventosColuna" text="Eventos" />
+                                    <TableColumn fx:id="cafeColuna" text="Cafe" />
+                                    <TableColumn fx:id="almocoColuna" text="Almoco" />
+                           <TableColumn fx:id="jantaColuna" text="Janta" />
+                           <TableColumn fx:id="dataColuna" text="Data" />
                                 </columns>
                             </TableView>
                         </VBox>
