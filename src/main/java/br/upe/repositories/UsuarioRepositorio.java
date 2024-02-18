@@ -22,6 +22,9 @@ public class UsuarioRepositorio {
 
   // Método para criar usuários e adicioná-los a uma lista
   public void criarUsuario(Usuario usuario) {
+    usuarios.add(usuario);// Teste para tentar adicionar sem passar pela validação 
+    
+    
     boolean cpfValido = validarCPF(usuario.getCpf());
     if (cpfValido) {
       usuarios.add(usuario);

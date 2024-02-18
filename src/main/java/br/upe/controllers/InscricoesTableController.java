@@ -66,7 +66,9 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
 
   private ObservableList<Usuario> listaDeInscricoes() {
     return FXCollections.observableArrayList(
-       new Usuario("10086875450", "Vitório Fernandes de Amorim", 3, 3,3,"12/09/2002"));
+       new Usuario("10086875450", "Vitório Fernandes de Amorim", 3, 3,3,"12/09/2002"),
+       new Usuario("08973660420", "Vitório Fernandes de Amorim", 3, 3,3,"12/09/2002")
+       );
        
   }
 
