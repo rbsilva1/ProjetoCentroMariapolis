@@ -8,6 +8,14 @@ import br.upe.models.Evento;
 public class EventosRepositorio {
     private ArrayList<Evento> eventos = new ArrayList<>();
 
+    private static class SingletonHelper {
+        private static final EventosRepositorio INSTANCE = new EventosRepositorio();
+    }
+
+    public static EventosRepositorio getInstance() {
+        return SingletonHelper.INSTANCE;
+    }
+
     static int id = 0;
 
     // Criar
@@ -30,10 +38,10 @@ public class EventosRepositorio {
     public void atualizarEvento(Evento eventos) {
         for (int i = 0; i < this.eventos.size(); i++) {
             if (this.eventos.get(i).getId() == eventos.getId()) {
-              this.eventos.set(i, eventos);
-              break;
+                this.eventos.set(i, eventos);
+                break;
             }
-          }
+        }
     }
 
     // Deletar

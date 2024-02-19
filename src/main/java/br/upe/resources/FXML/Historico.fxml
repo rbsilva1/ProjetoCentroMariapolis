@@ -57,7 +57,7 @@
       </HBox>
    </top>
       <center>
-         <VBox alignment="CENTER">
+         <VBox alignment="CENTER" style="-fx-background-color: #E8B0B069;">
             <Pane prefHeight="15"/>
             <VBox maxWidth="-Infinity">
                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity">
@@ -77,7 +77,7 @@
          </VBox>
       </center>
       <bottom>
-         <HBox alignment="CENTER" prefHeight="80" spacing="10">
+         <HBox alignment="CENTER" prefHeight="80" spacing="10" style="-fx-background-color: #E8B0B069;">
             <Label text="Desenvolvido por: " />
             <Label text="Grupo 3" />
          </HBox>

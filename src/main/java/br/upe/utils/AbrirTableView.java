@@ -17,7 +17,7 @@ public class AbrirTableView {
 
   }
 
-  public static void abrirTableView(TableView<Usuario> tabela, URL fxml) {
+  public static <T> void abrirTableView(TableView<T> tabela, URL fxml) {
     tabela.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
       if (newSelection != null) {
         try {
@@ -25,14 +25,16 @@ public class AbrirTableView {
           Parent root = loader.load();
           PerfilController perfilController = loader.getController();
 
-          perfilController.mostrarInformacoesUsuario(newSelection);
+          if (newSelection instanceof Usuario) {
+            perfilController.mostrarInformacoesUsuario((Usuario) newSelection);
+            Stage popupStage = new Stage();
+            popupStage.setTitle("Perfil");
+            popupStage.setScene(new Scene(root));
+            popupStage.setResizable(false);
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.show();
+          }
 
-          Stage popupStage = new Stage();
-          popupStage.setTitle("Perfil");
-          popupStage.setScene(new Scene(root));
-          popupStage.setResizable(false);
-          popupStage.initModality(Modality.APPLICATION_MODAL);
-          popupStage.show();
         } catch (IOException e) {
           e.printStackTrace();
         }

@@ -47,6 +47,7 @@ public class UsuarioRepositorio {
       }
     }
     if (!encontrado) {
+      // Faltar implementar
     }
   }
 
@@ -61,6 +62,7 @@ public class UsuarioRepositorio {
       }
     }
     if (!encontrado) {
+      // Falta implementar
     }
   }
 

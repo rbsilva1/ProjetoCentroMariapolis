@@ -6,77 +6,95 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.upe.controllers.CriarEventoController">
-   <children>
-      <AnchorPane prefHeight="412.0" prefWidth="708.0" style="-fx-background-color: #E8B0B069;">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.upe.controllers.CriarEventoController">
+   <top>
+      <HBox style="-fx-background-color: #426DA7;" spacing="10"  alignment="CENTER_LEFT">
          <children>
-            <AnchorPane layoutY="-14.0" prefHeight="74.0" prefWidth="1440.0" style="-fx-background-color: #426DA7;">
-               <children>
-                  <Button fx:id="paginainicial" layoutX="735.0" layoutY="30.0" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
-                     <font>
-                        <Font name="Reem Kufi Regular" size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="paginaEventos" layoutX="1073.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE">
-                     <font>
-                        <Font name="Reem Kufi Regular" size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="inscricoes" layoutX="1278.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirInscricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
-                     <font>
-                        <Font name="Reem Kufi Regular" size="20.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="136.0" layoutY="21.0" prefHeight="60.0" prefWidth="575.0" text="Centro Mariápolis Santa Maria" textFill="WHITE">
-                     <font>
-                        <Font name="Reem Kufi Bold" size="40.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="72.0" fitWidth="79.0" layoutX="59.0" layoutY="16.0">
-                     <image>
-                        <Image url="@../images/logo-centro.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="botaoHistorico1" layoutX="877.0" layoutY="31.0" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
-                     <font>
-                        <Font name="Reem Kufi Regular" size="20.0" />
-                     </font>
-                  </Button>
-               </children>
-            </AnchorPane>
-            <TextField fx:id="nomeEvento" layoutX="415.0" layoutY="312.0" prefHeight="43.0" prefWidth="575.0" />
-            <Label layoutX="415.0" layoutY="267.0" text="Nome do Evento:">
+            <ImageView fitHeight="72.0" fitWidth="79.0">
+               <image>
+                  <Image url="@../images/logo-centro.png" />
+               </image>
+            </ImageView>
+            <Label text="Centro Mariápolis Santa Maria" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="Reem Kufi Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="415.0" layoutY="365.0" text="Estados onde ele estará disponível:">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <TextField fx:id="estados" layoutX="415.0" layoutY="405.0" prefHeight="43.0" prefWidth="575.0" />
-            <Label layoutX="415.0" layoutY="459.0" text="Chegada à partir de :">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-            <TextField fx:id="horaChegada" layoutX="415.0" layoutY="488.0" prefHeight="43.0" prefWidth="261.0" />
-            <Label layoutX="720.0" layoutY="459.0" text="Até: ">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-            <TextField fx:id="horaSaida" layoutX="720.0" layoutY="488.0" prefHeight="43.0" prefWidth="269.0" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox spacing="10" alignment="CENTER_RIGHT"> 
+               <Button fx:id="paginainicial" mnemonicParsing="false" onAction="#voltarTelaInicial" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página Inicial" textFill="WHITE">
+                  <font>
+                     <Font name="Reem Kufi Regular" size="20.0" />
+                  </font>
+               </Button>
+               <Button fx:id="paginaEventos" mnemonicParsing="false" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Página de Eventos" textFill="WHITE" onAction="#paginaEventos">
+                  <font>
+                     <Font name="Reem Kufi Regular" size="20.0" />
+                  </font>
+               </Button>
+               <Button fx:id="inscricoes" mnemonicParsing="false" onAction="#abrirInscricoes" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Inscrições" textFill="WHITE">
+                  <font>
+                     <Font name="Reem Kufi Regular" size="20.0" />
+                  </font>
+               </Button>
+               <Button fx:id="botaoHistorico" mnemonicParsing="false" onAction="#abrirHistorico" style="-fx-background-color: 0000; -fx-cursor: hand;" text="Histórico de Acesso" textFill="WHITE">
+                  <font>
+                     <Font name="Reem Kufi Regular" size="20.0" />
+                  </font>
+               </Button>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" style="-fx-background-color: #E8B0B069;" spacing="10">
+         <HBox alignment="CENTER" spacing="10" >
+            <VBox spacing="15">
+               <Label layoutX="415.0" layoutY="267.0" text="Nome do Evento:">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="nomeEvento" layoutX="415.0" layoutY="312.0" prefHeight="35.0" prefWidth="500.0" />
+               <Label layoutX="415.0" layoutY="365.0" text="Estados onde ele estará disponível:">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="estados" layoutX="415.0" layoutY="405.0" prefHeight="35.0" prefWidth="200.0" />
+               <Label layoutX="415.0" layoutY="459.0" text="Chegada à partir de :">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="horaChegada" layoutX="415.0" layoutY="488.0" prefHeight="35.0" prefWidth="200.0" />
+               <Label layoutX="720.0" layoutY="459.0" text="Até: ">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+                  <TextField fx:id="horaSaida" prefHeight="35.0" prefWidth="200.0" />
+            </VBox>
+         </HBox>  
+            <Pane prefHeight="15"/>
             <Button fx:id="criarEvento" layoutX="624.0" layoutY="552.0" mnemonicParsing="false" onAction="#criarEvento" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Criar Evento" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
+      </VBox>
+   </center>
+   <!-- <children>
+            
          </children>
       </AnchorPane>
-   </children>
-</StackPane>
+   </children> -->
+</BorderPane>
