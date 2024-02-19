@@ -34,12 +34,12 @@ public class UsuarioRepositorio {
 
   // Método para mostrar todos os usuários cadastrados
   public Usuario mostrarUsuarios() {
-    if (usuarios.isEmpty()) {
+    if (!usuarios.isEmpty()) {
+      for (Usuario usuario : usuarios) {
+        return usuario;
+      }
+    }
 
-    }
-    for (Usuario usuario : usuarios) {
-      return usuario;
-    }
     return null;
   }
 
