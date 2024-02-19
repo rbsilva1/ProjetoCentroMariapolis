@@ -27,7 +27,7 @@ import br.upe.utils.AbrirFXML;
 
 public class HistoricoController implements javafx.fxml.Initializable {
     @FXML
-    public Button botaoInscrições;
+    public Button botaoInscricoes;
 
     @FXML
     private Button botaoHistorico1;
