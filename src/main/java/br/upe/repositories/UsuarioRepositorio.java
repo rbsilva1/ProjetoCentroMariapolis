@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.upe.models.Usuario;
-import static br.upe.utils.CPF_Validacao.validarCPF;
+import static br.upe.utils.CpfValidacao.validarCPF;
 
 public class UsuarioRepositorio {
   private List<Usuario> usuarios = new ArrayList<Usuario>();

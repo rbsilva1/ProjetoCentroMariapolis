@@ -11,11 +11,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.Modality;
 
-import static br.upe.utils.CPF_Validacao.validarCPF;
+import static br.upe.utils.CpfValidacao.validarCPF;
 
 import java.io.IOException;
 
-import br.upe.utils.Formatar_CPF;
+import br.upe.utils.FormatarCPF;
 
 public class HomeController {
 
@@ -80,7 +80,7 @@ public class HomeController {
 
     @FXML
     public void mascaraCPF() {
-        Formatar_CPF verificaEntrada = new Formatar_CPF();
+        FormatarCPF verificaEntrada = new FormatarCPF();
         verificaEntrada.setMask("###.###.###-##");
         verificaEntrada.setCaracteresValidos("0123456789");
         verificaEntrada.setTf(digitarCPF);

@@ -1,7 +1,7 @@
 package br.upe.utils;
 
-public class cpfValidacao {
-    private cpfValidacao() {
+public class CpfValidacao {
+    private CpfValidacao() {
     }
 
     public static boolean validarCPF(String cpf) {// Método de Verificação de CPF

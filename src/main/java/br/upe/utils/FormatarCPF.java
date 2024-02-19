@@ -4,13 +4,13 @@ import java.text.ParseException;
 import javafx.scene.control.TextField;
 import javax.swing.text.MaskFormatter;
 
-public class formatarCPF {
+public class FormatarCPF {
     private final MaskFormatter mf;
     private TextField tf;
     private String caracteresValidos;
     private String mask;
 
-    public formatarCPF() {
+    public FormatarCPF() {
         mf = new MaskFormatter();
     }
 
