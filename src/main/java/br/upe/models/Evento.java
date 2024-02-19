@@ -19,7 +19,7 @@ public class Evento {
         this.nome = new SimpleStringProperty(nome);
         this.dataInicio = new SimpleStringProperty(dataInicio);
         this.dataFim = new SimpleStringProperty(dataFim);
-        this.createAt = DataAtual();
+        this.createAt = dataAtual();
         this.local = new SimpleStringProperty(local);
     }
 
@@ -67,11 +67,9 @@ public class Evento {
         this.local.set(local);
     }
 
-    public String DataAtual() {
+    public String dataAtual() {
         LocalDateTime agora = LocalDateTime.now();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        String dataHoraFormatada = agora.format(formato);
-
-        return dataHoraFormatada;
+        return agora.format(formato);
     }
 }

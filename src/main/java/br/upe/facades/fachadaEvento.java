@@ -3,7 +3,7 @@ package br.upe.facades;
 import br.upe.models.Evento;
 import br.upe.repositories.EventosRepositorio;
 
-public class fachadaEvento {
+public class FachadaEvento {
     public void criarNovoEvento(String nomeE, String horaC, String horaS, String esta) {
         EventosRepositorio eventosRepositorio = new EventosRepositorio();
 
@@ -11,8 +11,6 @@ public class fachadaEvento {
 
         Evento evento = new Evento(id, nomeE, horaC, horaS, esta);
 
-        eventosRepositorio.CriarEventos(evento);
+        eventosRepositorio.criarEventos(evento);
     }
-
-    public void adicionarNaTela() {}
 }

@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-import br.upe.facades.fachadaEvento;
+import br.upe.facades.FachadaEvento;
 import br.upe.utils.AbrirFXML;
 
 public class CriarEventoController {
@@ -61,20 +61,15 @@ public class CriarEventoController {
 
     @FXML
     public void criarEvento(ActionEvent event) throws IOException {
-        try{
-            String horaC = horaChegada.getText();
-            String esta = estados.getText();
-            String horaS = horaSaída.getText();
-            String nomeE = nomeEvento.getText();
+        String horaC = horaChegada.getText();
+        String esta = estados.getText();
+        String horaS = horaSaída.getText();
+        String nomeE = nomeEvento.getText();
 
-            fachadaEvento fachadaEvento = new fachadaEvento();
+        FachadaEvento fachadaEvento = new FachadaEvento();
 
-            fachadaEvento.criarNovoEvento(nomeE, horaC, horaS, esta);
+        fachadaEvento.criarNovoEvento(nomeE, horaC, horaS, esta);
 
-            AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Eventos.fxml");
-        }
-        catch(Exception exception){
-            System.out.println(exception);
-        }
+        AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Eventos.fxml");
     }
 }

@@ -1,29 +1,22 @@
 package br.upe.repositories;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import br.upe.models.Evento;
 
 public class EventosRepositorio {
-    public static EventosRepositorio instance;
-    private ArrayList<Evento> eventos = new ArrayList<Evento>();
+    private ArrayList<Evento> eventos = new ArrayList<>();
 
     static int id = 0;
 
-    public static EventosRepositorio getInstance() {
-        if (instance == null) {
-            instance = new EventosRepositorio();
-        }
-        return instance;
-    }
-
     // Criar
-    public void CriarEventos(Evento evento) {
+    public void criarEventos(Evento evento) {
         this.eventos.add(evento);
     }
 
     // Ler
-    public ArrayList<Evento> buscarTodos() {
+    public List<Evento> buscarTodos() {
         return this.eventos;
     }
 
@@ -34,7 +27,7 @@ public class EventosRepositorio {
     }
 
     // Atualizar
-    public void AtualizarEvento(Evento eventos) {
+    public void atualizarEvento(Evento eventos) {
         for (int i = 0; i < this.eventos.size(); i++) {
             if (this.eventos.get(i).getId() == eventos.getId()) {
               this.eventos.set(i, eventos);
@@ -44,7 +37,7 @@ public class EventosRepositorio {
     }
 
     // Deletar
-    public void DeletarEvento(Evento evento) {
+    public void deletarEvento(Evento evento) {
         this.eventos.remove(evento);
     }
 
