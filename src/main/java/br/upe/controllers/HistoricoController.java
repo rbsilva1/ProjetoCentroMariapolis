@@ -106,7 +106,6 @@ public class HistoricoController implements javafx.fxml.Initializable {
         // Corrigir o jeito de adicionar no histórico e nas inscrições
         UsuarioRepositorio.getInstance()
                 .criarUsuario(new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3, 3, "12/09/2002"));
-        System.out.println(UsuarioRepositorio.getInstance().getUsuarios());
         return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().mostrarUsuarios());
 
     }

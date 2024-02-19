@@ -35,7 +35,6 @@ public class UsuarioRepositorio {
 
     }
     for (Usuario usuario : usuarios) {
-      System.out.println(usuario);
       return usuario;
     }
     return null;
