@@ -3,54 +3,98 @@ package br.upe.repositories;
 import java.util.ArrayList;
 
 import br.upe.models.Usuario;
+import static br.upe.utils.CPF_Validacao.validarCPF;
 
 public class UsuarioRepositorio {
-  public static UsuarioRepositorio instance;
+  private static UsuarioRepositorio instânciaRepositorio;
   private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
   public static UsuarioRepositorio getInstance() {
-    if (instance == null) {
-      instance = new UsuarioRepositorio();
+    if (instânciaRepositorio == null) {
+      instânciaRepositorio = new UsuarioRepositorio();
     }
-    return instance;
+    return instânciaRepositorio;
   }
 
-  public ArrayList<Usuario> buscarTodos() {
-    return this.usuarios;
+  // Método para criar usuários e adicioná-los a uma lista
+  public void criarUsuario(Usuario usuario) {
+    usuarios.add(usuario);// Teste para tentar adicionar sem passar pela validação
+
+    boolean cpfValido = validarCPF(usuario.getCpf());
+    if (cpfValido) {
+      usuarios.add(usuario);
+    } else {
+      System.out.println("Insira um CPF válido para criar o cadastro!\n");
+    }
   }
 
-  public void salvar(Usuario usuario) {
-    this.usuarios.add(usuario);
+  // Método para mostrar todos os usuários cadastrados
+  public Usuario mostrarUsuarios() {
+    if (usuarios.isEmpty()) {
+      System.out.println("Não há clientes cadastrados no Sistema!\n");
+
+    }
+    for (Usuario usuario : usuarios) {
+      System.out.println(usuario);
+      return usuario;
+    }
+    return null;
   }
 
-  public void deletar(Usuario usuario) {
-    this.usuarios.remove(usuario);
-  }
-
-  public void atualizar(Usuario usuario) {
-    for (int i = 0; i < this.usuarios.size(); i++) {
-      if (this.usuarios.get(i).getId() == usuario.getId()) {
-        this.usuarios.set(i, usuario);
+  // Método para atualizar os dados do usuário pelo CPF
+  public void atualizarUsuario(String cpf, Usuario usuario) {
+    boolean encontrado = false;
+    for (int i = 0; i < usuarios.size(); i++) {
+      if (usuarios.get(i).getCpf().equals(cpf)) {
+        usuarios.set(i, usuario);
+        System.out.println("Dados atualizados com sucesso!\n");
+        encontrado = true;
         break;
       }
     }
+    if (!encontrado) {
+      System.out.println("Usuário não encontrado!\n");
+    }
   }
 
-  public Usuario buscarPorId(int id) {
-    for (Usuario usuario : this.usuarios) {
-      if (usuario.getId() == id) {
-        return usuario;
+  // Método para deletar o usuário pelo CPF
+  public void deletarUsuario(String cpf) {
+    boolean encontrado = false;
+    for (int i = 0; i < usuarios.size(); i++) {
+      if (usuarios.get(i).getCpf().equals(cpf)) {
+        usuarios.remove(i);
+        System.out.println("Cliente Removido com Sucesso!\n");
+        encontrado = true;
+        break;
       }
     }
-    return null;
+    if (!encontrado) {
+      System.out.println("Cliente não encontrado!\n");
+    }
   }
 
-  public Usuario buscarPorCpf(String cpf) {
-    for (Usuario usuario : this.usuarios) {
+  // Método para buscar um usuário pelo CPF
+  public Usuario buscarUsuario(String cpf) {
+    boolean encontrado = false;
+    for (Usuario usuario : usuarios) {
       if (usuario.getCpf().equals(cpf)) {
+        System.out.println(usuario);
+        encontrado = true;
         return usuario;
       }
     }
+    if (!encontrado) {
+      System.out.println("Usuário não encontrado!\n");
+    }
     return null;
+  }
+
+  // Métodos getter e setter para a lista de usuários
+  public ArrayList<Usuario> getUsuarios() {
+    return usuarios;
+  }
+
+  public void setUsuarios(ArrayList<Usuario> usuarios) {
+    this.usuarios = usuarios;
   }
 }

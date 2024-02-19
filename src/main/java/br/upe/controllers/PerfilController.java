@@ -16,7 +16,11 @@ public class PerfilController {
   @FXML
   private Label eventoLabel;
   @FXML
-  private Label refeicaoLabel;
+  private Label cafeLabel;
+  @FXML
+  private Label almocoLabel;
+  @FXML
+  private Label jantaLabel;
 
   @FXML
   private Button voltar;
@@ -27,9 +31,11 @@ public class PerfilController {
   }
 
   public void mostrarInformacoesUsuario(Usuario usuario) {
+
     nomeLabel.setText(usuario.getNome());
     cpfLabel.setText(usuario.getCpf());
-    eventoLabel.setText(usuario.getEventos());
-    refeicaoLabel.setText(String.valueOf(usuario.getRefeicoes()));
+    cafeLabel.setText(String.valueOf(usuario.getCafe()));
+    almocoLabel.setText(String.valueOf(usuario.getAlmoco()));
+    jantaLabel.setText(String.valueOf(usuario.getJanta()));
   }
 }

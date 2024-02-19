@@ -22,5 +22,6 @@ public class Application extends javafx.application.Application {
         stage.setTitle("Projeto Centro Mariápolis!");
         stage.setScene(scene);
         stage.show();
+
     }
 }
