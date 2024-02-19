@@ -7,11 +7,7 @@ import br.upe.models.Usuario;
 import static br.upe.utils.CpfValidacao.validarCPF;
 
 public class UsuarioRepositorio {
-  private List<Usuario> usuarios = new ArrayList<Usuario>();
-
-  {
-    new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3, 3, "12/09/2002");
-  }
+  private List<Usuario> usuarios = new ArrayList<>();
 
   private static class SingletonHelper {
     private static final UsuarioRepositorio INSTANCE = new UsuarioRepositorio();
@@ -28,16 +24,13 @@ public class UsuarioRepositorio {
     boolean cpfValido = validarCPF(usuario.getCpf());
     if (cpfValido) {
       usuarios.add(usuario);
-    } else {
     }
   }
 
   // Método para mostrar todos os usuários cadastrados
-  public Usuario mostrarUsuarios() {
+  public List<Usuario> mostrarUsuarios() {
     if (!usuarios.isEmpty()) {
-      for (Usuario usuario : usuarios) {
-        return usuario;
-      }
+      return usuarios;
     }
 
     return null;

@@ -6,7 +6,7 @@ public class CpfValidacao {
 
     public static boolean validarCPF(String cpf) {// Método de Verificação de CPF
         // Removendo caracteres especiais do CPF e deixando somente os números
-        cpf = cpf.replaceAll("[^0-9]", "");
+        cpf = cpf.replaceAll("\\D", "");
 
         // Verificando se o CPF possui 11 dígitos
         if (cpf.length() != 11) {

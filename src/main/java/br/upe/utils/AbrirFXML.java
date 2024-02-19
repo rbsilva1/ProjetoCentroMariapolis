@@ -16,15 +16,12 @@ public class AbrirFXML {
 
     }
 
-    private static Scene scene;
-    private static Stage stage;
-
     public static void abrirFXML(ActionEvent event, String fxml) throws IOException {
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
         Parent root = FXMLLoader.load(AbrirFXML.class.getResource(fxml));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, bounds.getWidth(), bounds.getHeight());
         stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
