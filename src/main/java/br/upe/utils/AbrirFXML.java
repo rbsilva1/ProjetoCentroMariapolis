@@ -12,6 +12,10 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class AbrirFXML {
+    private AbrirFXML() {
+
+    }
+
     private static Scene scene;
     private static Stage stage;
 

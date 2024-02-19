@@ -4,24 +4,23 @@ import java.text.ParseException;
 import javafx.scene.control.TextField;
 import javax.swing.text.MaskFormatter;
 
-public class Formatar_CPF {
+public class formatarCPF {
     private final MaskFormatter mf;
     private TextField tf;
-    private String CaracteresValidos;
+    private String caracteresValidos;
     private String mask;
 
-    public Formatar_CPF() {
+    public formatarCPF() {
         mf = new MaskFormatter();
     }
 
-    public void formatter(TextField tf, String CaracteresValidos, String mask) {
+    public void formatter(TextField tf, String caracteresValidos, String mask) {
         try {
             mf.setMask(mask);
         } catch (ParseException ex) {
-            System.out.println(ex.getMessage());
         }
 
-        mf.setValidCharacters(CaracteresValidos);
+        mf.setValidCharacters(caracteresValidos);
         mf.setValueContainsLiteralCharacters(false);
         String text = tf.getText().replaceAll("[\\W]", "");
 
@@ -55,7 +54,7 @@ public class Formatar_CPF {
     }
 
     public void formatter() {
-        formatter(this.tf, this.CaracteresValidos, this.mask);
+        formatter(this.tf, this.caracteresValidos, this.mask);
     }
 
     public TextField getTf() {
@@ -67,11 +66,11 @@ public class Formatar_CPF {
     }
 
     public String getCaracteresValidos() {
-        return CaracteresValidos;
+        return caracteresValidos;
     }
 
-    public void setCaracteresValidos(String CaracteresValidos) {
-        this.CaracteresValidos = CaracteresValidos;
+    public void setCaracteresValidos(String caracteresValidos) {
+        this.caracteresValidos = caracteresValidos;
     }
 
     public String getMask() {

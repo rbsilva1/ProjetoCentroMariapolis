@@ -103,11 +103,7 @@ public class HistoricoController implements javafx.fxml.Initializable {
     }
 
     private ObservableList<Usuario> historico() {
-        // Corrigir o jeito de adicionar no histórico e nas inscrições
-        // UsuarioRepositorio.getInstance()
-        // .criarUsuario();
         return FXCollections.observableArrayList(UsuarioRepositorio.getInstance().mostrarUsuarios());
-
     }
 
     @FXML

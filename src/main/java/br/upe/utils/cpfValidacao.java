@@ -1,6 +1,9 @@
 package br.upe.utils;
 
-public class CPF_Validacao {
+public class cpfValidacao {
+    private cpfValidacao() {
+    }
+
     public static boolean validarCPF(String cpf) {// Método de Verificação de CPF
         // Removendo caracteres especiais do CPF e deixando somente os números
         cpf = cpf.replaceAll("[^0-9]", "");
