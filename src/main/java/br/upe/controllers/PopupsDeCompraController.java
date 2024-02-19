@@ -26,13 +26,13 @@ public class PopupsDeCompraController implements javafx.fxml.Initializable {
 
     @FXML
     void select(ActionEvent event) {
-
+        // Falta implementar
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ObservableList<String> list = FXCollections.observableArrayList("Cartão de crédito ou débito", "Boleto", "Pix", "Dinheiro");
+        ObservableList<String> list = FXCollections.observableArrayList("Cartão de crédito ou débito", "Boleto", "Pix",
+                "Dinheiro");
         caixaDeEscolha.setItems(list);
     }
 }
-

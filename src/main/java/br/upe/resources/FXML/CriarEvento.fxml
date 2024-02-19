@@ -70,8 +70,8 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="horaSaída" layoutX="720.0" layoutY="488.0" prefHeight="43.0" prefWidth="269.0" />
-            <Button fx:id="CriarEvento" layoutX="624.0" layoutY="552.0" mnemonicParsing="false" onAction="#criarEvento" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Criar Evento" textFill="WHITE">
+            <TextField fx:id="horaSaida" layoutX="720.0" layoutY="488.0" prefHeight="43.0" prefWidth="269.0" />
+            <Button fx:id="criarEvento" layoutX="624.0" layoutY="552.0" mnemonicParsing="false" onAction="#criarEvento" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Criar Evento" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>

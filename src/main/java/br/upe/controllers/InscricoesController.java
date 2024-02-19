@@ -28,7 +28,7 @@ public class InscricoesController {
   private Button detalhes;
 
   @FXML
-  private Button ButaoAtualizar;
+  private Button botaoAtualizar;
 
   @FXML
   public void mostrarDetalhes(ActionEvent event) throws IOException {

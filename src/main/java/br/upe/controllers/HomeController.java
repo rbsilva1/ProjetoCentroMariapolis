@@ -80,11 +80,11 @@ public class HomeController {
 
     @FXML
     public void mascaraCPF() {
-        Formatar_CPF verifica_entrada = new Formatar_CPF();
-        verifica_entrada.setMask("###.###.###-##");
-        verifica_entrada.setCaracteresValidos("0123456789");
-        verifica_entrada.setTf(digitarCPF);
-        verifica_entrada.formatter();
+        Formatar_CPF verificaEntrada = new Formatar_CPF();
+        verificaEntrada.setMask("###.###.###-##");
+        verificaEntrada.setCaracteresValidos("0123456789");
+        verificaEntrada.setTf(digitarCPF);
+        verificaEntrada.formatter();
     }
 
 }

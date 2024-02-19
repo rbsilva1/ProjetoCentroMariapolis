@@ -65,7 +65,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button fx:id="ButaoAtualizar" layoutX="1211.0" layoutY="97.0" mnemonicParsing="false" onAction="#abrirPopupCarregando" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Atualizar" textFill="WHITE">
+            <Button fx:id="botaoAtualizar" layoutX="1211.0" layoutY="97.0" mnemonicParsing="false" onAction="#abrirPopupCarregando" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Atualizar" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>

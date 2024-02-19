@@ -12,7 +12,7 @@ import br.upe.utils.AbrirFXML;
 public class CriarEventoController {
 
     @FXML
-    private Button CriarEvento;
+    private Button criarEvento;
 
     @FXML
     private Button botaoHistorico1;
@@ -24,7 +24,7 @@ public class CriarEventoController {
     private TextField horaChegada;
 
     @FXML
-    private TextField horaSaída;
+    private TextField horaSaida;
 
     @FXML
     private Button inscricoes;
@@ -39,12 +39,12 @@ public class CriarEventoController {
     private Button paginainicial;
 
     @FXML
-    void abrirHistorico(ActionEvent event) throws IOException{
+    void abrirHistorico(ActionEvent event) throws IOException {
         AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Historico.fxml");
     }
 
     @FXML
-    void abrirInscricoes(ActionEvent event) throws IOException{
+    void abrirInscricoes(ActionEvent event) throws IOException {
         AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Inscricoes.fxml");
     }
 

@@ -27,7 +27,7 @@ public class Usuario {
     try {
       this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
     } catch (ParseException e) {
-      System.out.println("Formato de data inválido. Use o formato dd/MM/yyyy.");
+      // System.out.println("Formato de data inválido. Use o formato dd/MM/yyyy.");
     }
   }
 
