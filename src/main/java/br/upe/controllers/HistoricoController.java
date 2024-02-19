@@ -74,7 +74,7 @@ public class HistoricoController implements javafx.fxml.Initializable {
 
         tabela.setItems((historico()));
 
-        AbrirTableView.abrirTableView(tabela);
+        AbrirTableView.abrirTableView(tabela, getClass().getResource("/br/upe/resources/FXML/PopupPerfil.fxml"));
     }
 
     private ObservableList<Usuario> historico() {

@@ -43,7 +43,7 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
 
     tabela.setItems(listaDeInscricoes());
 
-    AbrirTableView.abrirTableView(tabela);
+    AbrirTableView.abrirTableView(tabela, getClass().getResource("/br/upe/resources/FXML/PopupPerfil.fxml"));
   }
 
   private ObservableList<Usuario> listaDeInscricoes() {

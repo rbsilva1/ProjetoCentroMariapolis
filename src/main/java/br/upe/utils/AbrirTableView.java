@@ -1,6 +1,7 @@
 package br.upe.utils;
 
 import java.io.IOException;
+import java.net.URL;
 
 import br.upe.controllers.PerfilController;
 import br.upe.models.Usuario;
@@ -16,11 +17,11 @@ public class AbrirTableView {
 
   }
 
-  public static void abrirTableView(TableView<Usuario> tabela) {
+  public static void abrirTableView(TableView<Usuario> tabela, URL fxml) {
     tabela.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
       if (newSelection != null) {
         try {
-          FXMLLoader loader = new FXMLLoader(AbrirTableView.class.getResource("PopupPerfil.fxml"));
+          FXMLLoader loader = new FXMLLoader(fxml);
           Parent root = loader.load();
           PerfilController perfilController = loader.getController();
 
