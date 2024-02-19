@@ -19,7 +19,7 @@ public class SaldoInsuficienteController {
 
     @FXML
     void abrirPagamentos(ActionEvent event) throws IOException {
-        AbrirPopup.abrirPopup(event, "/br/upe/resources/FXML/PopupDeCompra.fxml", "Compra !");
+        AbrirPopup.abrirPopup("/br/upe/resources/FXML/PopupDeCompra.fxml", "Compra !");
     }
 
     @FXML

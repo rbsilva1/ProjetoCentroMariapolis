@@ -27,6 +27,7 @@ public class Usuario {
     try {
       this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
     } catch (ParseException e) {
+      // Falta implementar
     }
   }
 

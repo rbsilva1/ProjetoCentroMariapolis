@@ -18,6 +18,7 @@ public class FormatarCPF {
         try {
             mf.setMask(mask);
         } catch (ParseException ex) {
+            // Falta implementar
         }
 
         mf.setValidCharacters(caracteresValidos);
