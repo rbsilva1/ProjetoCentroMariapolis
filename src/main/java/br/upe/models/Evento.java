@@ -5,8 +5,12 @@ import java.time.format.DateTimeFormatter;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javax.persistence.*;
 
+@Entity
 public class Evento {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private final SimpleIntegerProperty id;
     private final SimpleStringProperty nome;
     private final SimpleStringProperty dataInicio;
@@ -62,7 +66,7 @@ public class Evento {
     public void setDataFim(String dataFim) {
         this.dataFim.set(dataFim);
     }
-    
+
     public void setLocal(String local) {
         this.local.set(local);
     }

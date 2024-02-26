@@ -5,10 +5,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javax.persistence.*;
 
+@Entity
 public class Usuario {
-  private final SimpleStringProperty nome;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private final SimpleStringProperty cpf;
+
+  private final SimpleStringProperty nome;
   private final SimpleIntegerProperty cafe;
   private final SimpleIntegerProperty almoco;
   private final SimpleIntegerProperty janta;
