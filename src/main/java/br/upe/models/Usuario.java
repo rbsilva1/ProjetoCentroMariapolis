@@ -7,6 +7,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javax.persistence.*;
 
+
 @Entity
 public class Usuario {
 

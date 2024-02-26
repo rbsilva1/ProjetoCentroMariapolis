@@ -7,6 +7,8 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javax.persistence.*;
 
+
+@Table(name = "Evento")// Criando a tabela com o nome de Eventos
 @Entity
 public class Evento {
     @Id

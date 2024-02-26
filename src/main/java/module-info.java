@@ -4,6 +4,7 @@ module br.upe {
   requires javafx.fxml;
   requires java.desktop;
     requires java.persistence;
+    
 
     opens br.upe.controllers to javafx.fxml;
   opens br.upe.models to javafx.base;

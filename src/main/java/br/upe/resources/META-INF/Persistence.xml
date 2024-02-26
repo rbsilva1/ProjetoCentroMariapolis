@@ -1,0 +1,24 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="Projeto">
+
+        <properties>
+            <property name="hibernate.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
+            <property name="hibernate.url" value="jdbc:postgresql://localhost:5432/ProjetoCentro" /> <!-- BD Nome -->
+            <property name="hibernate.user" value="postgres" /> <!-- Usuário do BD -->
+            <property name="hibernate.password" value="12345678" /> <!-- Senha do BD -->
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- Dialeto do BD -->
+            <property name="hibernate.hbm2ddl.auto" value="create" /> <!-- create / create-drop / update -->
+            
+            <property name="hibernate.show_sql" value="true" /> <!-- Mostrar SQL no console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Mostrar SQL formatado -->
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
