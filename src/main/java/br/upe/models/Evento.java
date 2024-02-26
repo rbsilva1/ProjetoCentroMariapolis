@@ -5,9 +5,13 @@ import java.time.format.DateTimeFormatter;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javax.persistence.*;
 
+@Entity
 public class Evento {
+    @Id  @GeneratedValue(strategy = GenerationType.AUTO)
     private final SimpleIntegerProperty id;
+    
     private final SimpleStringProperty nome;
     private final SimpleStringProperty dataInicio;
     private final SimpleStringProperty dataFim;

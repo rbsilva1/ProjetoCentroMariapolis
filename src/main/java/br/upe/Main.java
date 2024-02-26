@@ -6,9 +6,21 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javax.persistence.*;
 
 public class Main extends javafx.application.Application {
     public static void main(String[] args) {
+        EntityManagerFactory entityManagerFactory = null;
+        try {
+            entityManagerFactory = Persistence.createEntityManagerFactory("projeto");
+            System.out.println("Conexão com o banco de dados estabelecida com sucesso.");
+        } catch (Exception e) {
+            System.err.println("Erro ao tentar conectar ao banco de dados: " + e.getMessage());
+        } finally {
+            if (entityManagerFactory != null) {
+                entityManagerFactory.close();
+            }
+        }
         launch();
     }
 

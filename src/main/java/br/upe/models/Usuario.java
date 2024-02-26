@@ -1,13 +1,21 @@
 package br.upe.models;
 
 import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+@Entity
 public class Usuario {
   private final SimpleStringProperty nome;
+  @Id @GeneratedValue(strategy = GenerationType.AUTO)
   private final SimpleStringProperty cpf;
   private final SimpleIntegerProperty cafe;
   private final SimpleIntegerProperty almoco;
