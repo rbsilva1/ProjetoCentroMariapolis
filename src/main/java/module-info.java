@@ -7,6 +7,7 @@ module br.upe {
   opens br.upe.controllers to javafx.fxml;
   opens br.upe.models to javafx.base;
   opens br.upe.utils to javafx.fxml;
+  opens br.upe.repositories to br.upe.test;
 
   exports br.upe;
 }
