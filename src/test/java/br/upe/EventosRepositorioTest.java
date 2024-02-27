@@ -1,6 +1,8 @@
-package br.upe.repositories;
+package br.upe;
 
 import br.upe.models.Evento;
+import br.upe.repositories.EventosRepositorio;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

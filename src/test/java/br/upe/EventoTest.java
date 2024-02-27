@@ -1,8 +1,10 @@
-package br.upe.models;
+package br.upe;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+
+import br.upe.models.Evento;
 
 class EventoTest {
 
