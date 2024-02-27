@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    ports:
+      - '5435:5432'
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=minhasenha
+      - POSTGRES_DB=projeto_jpa
+    volumes:
+      - jpa_data:/bitnami/postgres
+
+volumes:
+  jpa_data:

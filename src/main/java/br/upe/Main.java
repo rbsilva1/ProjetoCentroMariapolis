@@ -15,10 +15,10 @@ public class Main extends Application {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = null;
         try {
-            entityManagerFactory = Persistence.createEntityManagerFactory("centro");
+            entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
             System.out.println("Conexão com o banco de dados estabelecida com sucesso.");
         } catch (Exception e) {
-            System.err.println("Erro ao tentar conectar ao banco de dados: "  + e.getMessage());
+            System.err.println("Erro ao tentar conectar ao banco de dados: " + e.getMessage());
         } finally {
             if (entityManagerFactory != null) {
                 entityManagerFactory.close();

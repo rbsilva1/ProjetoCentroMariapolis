@@ -1,76 +1,96 @@
 package br.upe.models;
-import javax.persistence.Entity;
 
-import javax.persistence.Table;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-
-
 @Entity
+@Access(AccessType.PROPERTY)
 public class Evento {
-    private long id;
-    private String nome;
-    private String dataInicio;
-    private String dataFim;
-    private String local;
-    private String createAt;
-
-    private  SimpleStringProperty nomeProperty;
-    private  SimpleStringProperty dataInicioProperty;
-    private  SimpleStringProperty dataFimProperty;
-    private  SimpleStringProperty localProperty;
-    private  SimpleStringProperty createAtProperty;
+    private final SimpleIntegerProperty id = new SimpleIntegerProperty();
+    private final SimpleStringProperty nome = new SimpleStringProperty();
+    private final SimpleStringProperty dataInicio = new SimpleStringProperty();
+    private final SimpleStringProperty dataFim = new SimpleStringProperty();
+    private final SimpleStringProperty local = new SimpleStringProperty();
+    private final SimpleStringProperty createAt = new SimpleStringProperty();
 
     public Evento() {
         // Construtor vazio necessário para o Hibernate
     }
 
     public Evento(String nome, String dataInicio, String dataFim, String local) {
-        this.nome = nome;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
-        this.createAt = dataAtual();
-        this.local = local;
+        setNome(nome);
+        setDataInicio(dataInicio);
+        setDataFim(dataFim);
+        setLocal(local);
+        setCreateAt(dataAtual());
     }
 
     // Getters e setters
-    public void setId(long id) {
-        this.id = id;
+    public void setId(Integer id) {
+        this.id.set(id);
     }
+
+    @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
-        return id;
+        return this.id.get();
     }
-    
+
+    @Column(name = "nome")
     public String getNome() {
-        return nome;
+        return this.nome.get();
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nome.set(nome);
     }
 
+    @Column(name = "dataInicio")
     public String getDataInicio() {
-        return dataInicio;
+        return this.dataInicio.get();
     }
 
-
+    @Column(name = "dataFim")
     public String getDataFim() {
-        return dataFim;
+        return this.dataFim.get();
     }
 
+    public void setDataInicio(String dataInicio) {
+        this.dataInicio.set(dataInicio);
+    }
+
+    public void setDataFim(String dataFim) {
+        this.dataFim.set(dataFim);
+    }
+
+    @Column(name = "local")
     public String getLocal() {
-        return local;
+        return this.local.get();
     }
 
+    @Column(name = "createAt")
     public String getCreateAt() {
-        return createAt;
+        return this.createAt.get();
     }
 
     public void setCreateAt(String createAt) {
-        this.createAt = createAt;
+        this.createAt.set(createAt);
+    }
+
+    public void setLocal(String local) {
+        this.local.set(local);
     }
 
     // Método para obter a data atual formatada
@@ -79,42 +99,5 @@ public class Evento {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         return agora.format(formato);
     }
-
-
-    public SimpleStringProperty nomeProperty() {
-        if (nomeProperty == null) {
-            nomeProperty = new SimpleStringProperty(nome);
-        }
-        return nomeProperty;
-    }
-
-    public SimpleStringProperty dataInicioProperty() {
-        if (dataInicioProperty == null) {
-            dataInicioProperty = new SimpleStringProperty(dataInicio);
-        }
-        return nomeProperty;
-    }
-
-    public SimpleStringProperty dataFimProperty() {
-        if (dataFimProperty == null) {
-            dataFimProperty = new SimpleStringProperty(dataFim);
-        }
-        return nomeProperty;
-    }
-
-    public SimpleStringProperty localProperty() {
-        if (localProperty == null) {
-            localProperty = new SimpleStringProperty(local);
-        }
-        return nomeProperty;
-    }
-
-    public SimpleStringProperty createAtProperty() {
-        if (createAtProperty == null) {
-            createAtProperty = new SimpleStringProperty(createAt);
-        }
-        return nomeProperty;
-    }
-
 
 }

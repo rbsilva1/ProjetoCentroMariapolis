@@ -8,24 +8,25 @@ import javafx.beans.property.SimpleStringProperty;
 import javax.persistence.*;
 
 @Entity
+@Access(AccessType.PROPERTY)
 public class Usuario {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private final SimpleStringProperty cpf;
-
-  private final SimpleStringProperty nome;
-  private final SimpleIntegerProperty cafe;
-  private final SimpleIntegerProperty almoco;
-  private final SimpleIntegerProperty janta;
+  private final SimpleStringProperty cpf = new SimpleStringProperty();
+  private final SimpleStringProperty nome = new SimpleStringProperty();
+  private final SimpleIntegerProperty cafe = new SimpleIntegerProperty();
+  private final SimpleIntegerProperty almoco = new SimpleIntegerProperty();
+  private final SimpleIntegerProperty janta = new SimpleIntegerProperty();
   private Date data;
 
+  public Usuario() {
+    // Construtor vazio necessário para o Hibernate
+  }
+
   public Usuario(String cpf, String nome, int cafe, int almoco, int janta, String data) {
-    this.nome = new SimpleStringProperty(cpf);
-    this.cpf = new SimpleStringProperty(nome);
-    this.cafe = new SimpleIntegerProperty(cafe);
-    this.almoco = new SimpleIntegerProperty(almoco);
-    this.janta = new SimpleIntegerProperty(janta);
+    setCpf(cpf);
+    setNome(nome);
+    setCafe(cafe);
+    setAlmoco(almoco);
+    setJanta(janta);
     setData(data);
   }
 
@@ -33,6 +34,7 @@ public class Usuario {
     this.nome.set(nome);
   }
 
+  @Column(name = "nome")
   public String getNome() {
     return nome.get();
   }
@@ -41,6 +43,9 @@ public class Usuario {
     this.cpf.set(cpf);
   }
 
+  @Column(name = "cpf")
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   public String getCpf() {
     return cpf.get();
   }
@@ -49,24 +54,25 @@ public class Usuario {
     this.cafe.set(cafe);
   }
 
+  @Column(name = "cafe")
   public int getCafe() {
     return cafe.get();
   }
 
-
   public void setAlmoco(int almoco) {
     this.almoco.set(almoco);
   }
-  
+
+  @Column(name = "almoco")
   public int getAlmoco() {
     return almoco.get();
   }
-
 
   public void setJanta(int janta) {
     this.janta.set(janta);
   }
 
+  @Column(name = "janta")
   public int getJanta() {
     return janta.get();
   }
@@ -79,9 +85,9 @@ public class Usuario {
     }
   }
 
+  @Column(name = "data")
   public String getData() {
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     return sdf.format(this.data);
   }
-
 }
