@@ -7,16 +7,23 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.io.IOException;
-
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import br.upe.models.*;
+import javax.persistence.*;
 
 public class Main extends Application {
     public static void main(String[] args) {
-        EntityManagerFactory entityManagerFactory = null;
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
         try {
-            entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
+            EntityManager em = entityManagerFactory.createEntityManager();
+            EntityTransaction tx = em.getTransaction();
+            tx.begin();
+            Usuario usuario = new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3, 3, "12/09/2002");
+            em.persist(usuario);
+            tx.commit();
+            em.close();
+            entityManagerFactory.close();
             System.out.println("Conexão com o banco de dados estabelecida com sucesso.");
+            
         } catch (Exception e) {
             System.err.println("Erro ao tentar conectar ao banco de dados: " + e.getMessage());
         } finally {
