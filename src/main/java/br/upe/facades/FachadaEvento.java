@@ -9,9 +9,7 @@ public class FachadaEvento {
     private EventosRepositorio eventosRepositorio = EventosRepositorio.getInstance();
 
     public void criarNovoEvento(String nomeE, String horaC, String horaS, String esta) {
-        int id = EventosRepositorio.ultimoID();
-
-        Evento evento = new Evento(id, nomeE, horaC, horaS, esta);
+        Evento evento = new Evento(nomeE, horaC, horaS, esta);
 
         eventosRepositorio.criarEventos(evento);
     }

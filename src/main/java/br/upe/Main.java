@@ -15,7 +15,7 @@ public class Main extends javafx.application.Application {
             entityManagerFactory = Persistence.createEntityManagerFactory("projeto");
             System.out.println("Conexão com o banco de dados estabelecida com sucesso.");
         } catch (Exception e) {
-            System.err.println("Erro ao tentar conectar ao banco de dados: " + e.getMessage());
+            System.err.println("Erro ao tentar conectar ao banco de dados: "  + e.getMessage());
         } finally {
             if (entityManagerFactory != null) {
                 entityManagerFactory.close();
@@ -34,6 +34,5 @@ public class Main extends javafx.application.Application {
         stage.setTitle("Projeto Centro Mariápolis!");
         stage.setScene(scene);
         stage.show();
-
     }
 }
