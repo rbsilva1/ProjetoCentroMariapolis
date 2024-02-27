@@ -1,28 +1,28 @@
 package br.upe.models;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 import javax.persistence.Table;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javafx.beans.property.SimpleStringProperty;
 
+
+
+@Entity
 public class Evento {
-    private Long id;
-    
+    private long id;
     private String nome;
     private String dataInicio;
     private String dataFim;
     private String local;
     private String createAt;
 
-    private transient SimpleStringProperty nomeProperty;
-    private transient SimpleStringProperty dataInicioProperty;
-    private transient SimpleStringProperty dataFimProperty;
-    private transient SimpleStringProperty localProperty;
-    private transient SimpleStringProperty createAtProperty;
+    private  SimpleStringProperty nomeProperty;
+    private  SimpleStringProperty dataInicioProperty;
+    private  SimpleStringProperty dataFimProperty;
+    private  SimpleStringProperty localProperty;
+    private  SimpleStringProperty createAtProperty;
 
     public Evento() {
         // Construtor vazio necessário para o Hibernate
@@ -37,15 +37,13 @@ public class Evento {
     }
 
     // Getters e setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
-
+    public long getId() {
+        return id;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -58,24 +56,13 @@ public class Evento {
         return dataInicio;
     }
 
-    public void setDataInicio(String dataInicio) {
-        this.dataInicio = dataInicio;
-    }
 
     public String getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(String dataFim) {
-        this.dataFim = dataFim;
-    }
-
     public String getLocal() {
         return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
     }
 
     public String getCreateAt() {
@@ -87,7 +74,7 @@ public class Evento {
     }
 
     // Método para obter a data atual formatada
-    private String dataAtual() {
+    public String dataAtual() {
         LocalDateTime agora = LocalDateTime.now();
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         return agora.format(formato);

@@ -1,18 +1,21 @@
 package br.upe;
 
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.io.IOException;
-import javax.persistence.*;
 
-public class Main extends javafx.application.Application {
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class Main extends Application {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = null;
         try {
-            entityManagerFactory = Persistence.createEntityManagerFactory("projeto");
+            entityManagerFactory = Persistence.createEntityManagerFactory("centro");
             System.out.println("Conexão com o banco de dados estabelecida com sucesso.");
         } catch (Exception e) {
             System.err.println("Erro ao tentar conectar ao banco de dados: "  + e.getMessage());
