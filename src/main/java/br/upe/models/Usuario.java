@@ -45,7 +45,6 @@ public class Usuario {
 
   @Column(name = "cpf")
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
   public String getCpf() {
     return cpf.get();
   }

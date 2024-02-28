@@ -16,14 +16,20 @@ public class Main extends Application {
         try {
             EntityManager em = entityManagerFactory.createEntityManager();
             EntityTransaction tx = em.getTransaction();
+            Usuario usuario = new Usuario();
+            usuario.setCpf("100.868.754-50");
+            usuario.setNome("Vitório Fernandes de Amorim");
+            usuario.setCafe(3);
+            usuario.setAlmoco(3);
+            usuario.setJanta(3);
+            usuario.setData("12/09/2002");
             tx.begin();
-            Usuario usuario = new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3, 3, "12/09/2002");
             em.persist(usuario);
             tx.commit();
             em.close();
             entityManagerFactory.close();
             System.out.println("Conexão com o banco de dados estabelecida com sucesso.");
-            
+
         } catch (Exception e) {
             System.err.println("Erro ao tentar conectar ao banco de dados: " + e.getMessage());
         } finally {
