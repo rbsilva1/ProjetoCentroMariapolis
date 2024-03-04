@@ -17,7 +17,7 @@ public class Main extends Application {
             EntityManager em = entityManagerFactory.createEntityManager();
             EntityTransaction tx = em.getTransaction();
             Usuario usuario = new Usuario();
-            usuario.setCpf("100.868.754-50");
+            usuario.setCpf("100.868.754-51");
             usuario.setNome("Vitório Fernandes de Amorim");
             usuario.setCafe(3);
             usuario.setAlmoco(3);
