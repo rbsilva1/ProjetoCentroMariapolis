@@ -25,18 +25,10 @@ public class UsuarioRepositorio {
 
   // Método para criar usuários e adicioná-los a uma lista
   public void criarUsuario(Usuario usuario) {
-  // Teste para tentar adicionar sem passar pela validação
-
     boolean cpfValido = validarCPF(usuario.getCpf());
     if (cpfValido) {
       EntityManager em = entityManagerFactory.createEntityManager();
       EntityTransaction tx = em.getTransaction();
-      usuario.setCpf(usuario.getCpf());
-      usuario.setNome(usuario.getNome());
-      usuario.setCafe(usuario.getCafe());
-      usuario.setAlmoco(usuario.getAlmoco());
-      usuario.setJanta(usuario.getJanta());
-      usuario.setData(usuario.getData());
       tx.begin();
       em.persist(usuario);
       tx.commit();
