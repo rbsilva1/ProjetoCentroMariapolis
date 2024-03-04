@@ -11,7 +11,7 @@ public class FachadaEvento {
     public void criarNovoEvento(String nomeE, String horaC, String horaS, String esta) {
         Evento evento = new Evento(nomeE, horaC, horaS, esta);
 
-        eventosRepositorio.criarEventos(evento);
+        eventosRepositorio.criarEvento(evento);
     }
 
     public List<Evento> buscarEventos() {

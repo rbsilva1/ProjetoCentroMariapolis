@@ -17,11 +17,11 @@ public class Main extends Application {
         try {
             EntityManager em = entityManagerFactory.createEntityManager();
             EntityTransaction tx = em.getTransaction();
-            //Usuario usuario = new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3, 3, "23/09/2002");
-            Evento evento = new Evento("Festa2", "23/02/2024", "24/02/2024", "Centro");
+            Usuario usuario = new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3, 3, "23/09/2002");
+            //Evento evento = new Evento("Festa2", "23/02/2024", "24/02/2024", "Centro");
             tx.begin();
-            //em.persist(usuario);
-            em.persist(evento);
+            em.persist(usuario);
+            //em.persist(evento);
             tx.commit();
             em.close();
             entityManagerFactory.close();

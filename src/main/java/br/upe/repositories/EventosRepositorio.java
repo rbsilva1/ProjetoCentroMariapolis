@@ -1,17 +1,18 @@
 package br.upe.repositories;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import br.upe.models.Evento;
 
 public class EventosRepositorio {
-    private ArrayList<Evento> eventos = new ArrayList<>();
+    private static final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
+    private static final EntityManager entityManager = entityManagerFactory.createEntityManager();
+    private static final EntityTransaction transaction = entityManager.getTransaction();
 
     private static class SingletonHelper {
         private static final EventosRepositorio INSTANCE = new EventosRepositorio();
@@ -21,54 +22,41 @@ public class EventosRepositorio {
         return SingletonHelper.INSTANCE;
     }
 
-    static int id = 0;
-    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
-    
-            
     // Criar
-    public void criarEventos(Evento evento) {
-        EntityManager em = entityManagerFactory.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
-        tx.begin();
-        em.persist(evento);
-        tx.commit();
-        em.close();
-        entityManagerFactory.close();
-        this.eventos.add(evento);
+    public void criarEvento(Evento evento) {
+        transaction.begin();
+        entityManager.persist(evento);
+        transaction.commit();
     }
 
-    // Ler
+    // Ler todos os eventos
     public List<Evento> buscarTodos() {
-        return this.eventos;
+        TypedQuery<Evento> query = entityManager.createQuery("SELECT e FROM Evento e", Evento.class);
+        return query.getResultList();
     }
 
-    // Retonar ultimo id
-    public static int ultimoID() {
-        EventosRepositorio.id += 1;
-        return id;
+    // Retornar último ID
+    public int ultimoID() {
+        TypedQuery<Long> query = entityManager.createQuery("SELECT COUNT(e) FROM Evento e", Long.class);
+        return Math.toIntExact(query.getSingleResult());
     }
 
     // Atualizar
-    public void atualizarEvento(Evento eventos) {
-        for (int i = 0; i < this.eventos.size(); i++) {
-            if (this.eventos.get(i).getId() == eventos.getId()) {
-                this.eventos.set(i, eventos);
-                break;
-            }
-        }
+    public void atualizarEvento(Evento evento) {
+        transaction.begin();
+        entityManager.merge(evento);
+        transaction.commit();
     }
 
     // Deletar
     public void deletarEvento(Evento evento) {
-        this.eventos.remove(evento);
+        transaction.begin();
+        entityManager.remove(evento);
+        transaction.commit();
     }
 
+    // Buscar por ID
     public Evento buscarPorID(int id) {
-        for (int i = 0; i < this.eventos.size(); i++) {
-            if (this.eventos.get(i).getId() == id) {
-                return this.eventos.get(i);
-            }
-        }
-        return null;
+        return entityManager.find(Evento.class, id);
     }
 }
