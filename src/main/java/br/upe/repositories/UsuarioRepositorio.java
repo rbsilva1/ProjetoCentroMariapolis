@@ -3,11 +3,17 @@ package br.upe.repositories;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
 import br.upe.models.Usuario;
 import static br.upe.utils.CpfValidacao.validarCPF;
 
 public class UsuarioRepositorio {
   private List<Usuario> usuarios = new ArrayList<>();
+  EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
 
   private static class SingletonHelper {
     private static final UsuarioRepositorio INSTANCE = new UsuarioRepositorio();
@@ -19,11 +25,23 @@ public class UsuarioRepositorio {
 
   // Método para criar usuários e adicioná-los a uma lista
   public void criarUsuario(Usuario usuario) {
-    usuarios.add(usuario);// Teste para tentar adicionar sem passar pela validação
+  // Teste para tentar adicionar sem passar pela validação
 
     boolean cpfValido = validarCPF(usuario.getCpf());
     if (cpfValido) {
-      usuarios.add(usuario);
+      EntityManager em = entityManagerFactory.createEntityManager();
+      EntityTransaction tx = em.getTransaction();
+      usuario.setCpf(usuario.getCpf());
+      usuario.setNome(usuario.getNome());
+      usuario.setCafe(usuario.getCafe());
+      usuario.setAlmoco(usuario.getAlmoco());
+      usuario.setJanta(usuario.getJanta());
+      usuario.setData(usuario.getData());
+      tx.begin();
+      em.persist(usuario);
+      tx.commit();
+      em.close();
+      entityManagerFactory.close();
     }
   }
 
