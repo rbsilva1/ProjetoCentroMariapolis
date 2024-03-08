@@ -1,19 +1,17 @@
 package br.upe.repositories;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-
+import javax.persistence.TypedQuery;
 import br.upe.models.Usuario;
 import static br.upe.utils.CpfValidacao.validarCPF;
 
 public class UsuarioRepositorio {
-  private List<Usuario> usuarios = new ArrayList<>();
-  EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
+
+  private static final EntityManager entityManager = Persistence.createEntityManagerFactory("jpa").createEntityManager();
+  private static final EntityTransaction transaction = entityManager.getTransaction();
 
   private static class SingletonHelper {
     private static final UsuarioRepositorio INSTANCE = new UsuarioRepositorio();
@@ -23,82 +21,50 @@ public class UsuarioRepositorio {
     return SingletonHelper.INSTANCE;
   }
 
-  // Método para criar usuários e adicioná-los a uma lista
+  // Método para criar usuários e adicioná-los ao banco de dados
   public void criarUsuario(Usuario usuario) {
     boolean cpfValido = validarCPF(usuario.getCpf());
     if (cpfValido) {
-      EntityManager em = entityManagerFactory.createEntityManager();
-      EntityTransaction tx = em.getTransaction();
-      tx.begin();
-      em.persist(usuario);
-      tx.commit();
-      em.close();
-      entityManagerFactory.close();
+      transaction.begin();
+      entityManager.persist(usuario);
+      transaction.commit();
+    } else {
+      // Ajustar para caso não consiga criar o usuário
     }
   }
 
   // Método para mostrar todos os usuários cadastrados
   public List<Usuario> mostrarUsuarios() {
-    if (!usuarios.isEmpty()) {
-      return usuarios;
-    }
-
-    return null;
+    TypedQuery<Usuario> query = entityManager.createQuery("SELECT u FROM Usuario u", Usuario.class);
+    return query.getResultList();
   }
 
   // Método para atualizar os dados do usuário pelo CPF
   public void atualizarUsuario(String cpf, Usuario usuario) {
-    boolean encontrado = false;
-    for (int i = 0; i < usuarios.size(); i++) {
-      if (usuarios.get(i).getCpf().equals(cpf)) {
-        usuarios.set(i, usuario);
-        encontrado = true;
-        break;
-      }
-    }
-    if (!encontrado) {
-      // Faltar implementar
+    Usuario usuarioExistente = entityManager.find(Usuario.class, cpf);
+    if (usuarioExistente != null) {
+      transaction.begin();
+      usuarioExistente.setNome(usuario.getNome());
+      transaction.commit();
+    } else {
+      // Usuário não encontrado, ajustar conforme necessário
     }
   }
 
   // Método para deletar o usuário pelo CPF
   public void deletarUsuario(String cpf) {
-    boolean encontrado = false;
-    for (int i = 0; i < usuarios.size(); i++) {
-      if (usuarios.get(i).getCpf().equals(cpf)) {
-        usuarios.remove(i);
-        encontrado = true;
-        break;
-      }
-    }
-    if (!encontrado) {
-      // Falta implementar
+    Usuario usuarioExistente = entityManager.find(Usuario.class, cpf);
+    if (usuarioExistente != null) {
+      transaction.begin();
+      entityManager.remove(usuarioExistente);
+      transaction.commit();
+    } else {
+      // Usuário não encontrado, ajustar conforme necessário
     }
   }
 
   // Método para buscar um usuário pelo CPF
   public Usuario buscarUsuario(String cpf) {
-    Usuario usuarioEncontrado = null;
-    boolean encontrado = false;
-    for (Usuario usuario : usuarios) {
-      if (usuario.getCpf().equals(cpf)) {
-        usuarioEncontrado = usuario;
-        encontrado = true;
-        break;
-      }
-    }
-    if (encontrado) {
-      return usuarioEncontrado;
-    }
-    return null;
-  }
-
-  // Métodos getter e setter para a lista de usuários
-  public List<Usuario> getUsuarios() {
-    return usuarios;
-  }
-
-  public void setUsuarios(List<Usuario> usuarios) {
-    this.usuarios = usuarios;
+    return entityManager.find(Usuario.class, cpf);
   }
 }
