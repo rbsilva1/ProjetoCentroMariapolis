@@ -16,7 +16,7 @@ import javafx.beans.property.SimpleStringProperty;
 @Entity
 @Access(AccessType.PROPERTY)
 public class Evento {
-    private static int id;
+    private int id;
     private final SimpleStringProperty nome = new SimpleStringProperty();
     private final SimpleStringProperty dataInicio = new SimpleStringProperty();
     private final SimpleStringProperty dataFim = new SimpleStringProperty();
