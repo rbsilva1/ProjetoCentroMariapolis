@@ -47,7 +47,7 @@ public class InscricoesController {
             usuario.getJanta(), usuario.getData());
       }
     } catch (Exception e) {
-      e.printStackTrace(); // tirar stack trace e criar popup de erro
+      // e.printStackTrace(); // tirar stack trace e criar popup de erro
       // AbrirPopup.abrirPopup();
     }
   }
