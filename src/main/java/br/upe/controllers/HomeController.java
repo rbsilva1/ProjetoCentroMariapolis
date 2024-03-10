@@ -17,7 +17,6 @@ import java.io.IOException;
 
 import br.upe.facades.FachadaUsuario;
 import br.upe.models.Usuario;
-import br.upe.utils.AbrirFXML;
 import br.upe.utils.AbrirPopup;
 import br.upe.utils.FormatarCPF;
 

@@ -19,9 +19,8 @@ class EventosRepositorioTest {
         Evento evento = new Evento("Evento Teste", "20", "25", "Caruaru");
 
         // Mock the behavior of the repository methods
-        when(repositorioMock.buscarTodos()).thenReturn(new ArrayList<>()); // Return an empty list initially
         when(repositorioMock.criarEvento(any(Evento.class))).thenReturn(true);
-        when(repositorioMock.atualizarEvento(any(Evento.class))).thenReturn(true);
+        when(repositorioMock.buscarTodos()).thenReturn(new ArrayList<>());
         when(repositorioMock.deletarEvento(any(Evento.class))).thenReturn(true);
 
         // Call the methods under test
@@ -29,7 +28,8 @@ class EventosRepositorioTest {
 
         // Verify the interactions
         verify(repositorioMock, times(1)).criarEvento(evento);
-
-        // You can similarly test other methods and their interactions
+        verify(repositorioMock, never()).buscarTodos(); // We didn't call buscarTodos(), so it should never be invoked
+        verify(repositorioMock, never()).deletarEvento(any(Evento.class)); // We didn't call deletarEvento(), so it
+                                                                           // should never be invoked
     }
 }

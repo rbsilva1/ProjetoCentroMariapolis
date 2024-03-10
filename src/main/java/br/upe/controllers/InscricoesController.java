@@ -1,16 +1,11 @@
 package br.upe.controllers;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-import br.upe.facades.FachadaEvento;
 import br.upe.facades.FachadaUsuario;
 import br.upe.models.Usuario;
 import br.upe.utils.AbrirFXML;
-import br.upe.utils.AbrirPopup;
 import br.upe.utils.ImportarCSV;
 import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
@@ -19,7 +14,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
