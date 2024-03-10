@@ -36,7 +36,7 @@ public class AbrirTableView {
           }
 
         } catch (IOException e) {
-          e.printStackTrace();
+          // e.printStackTrace();
         }
       }
     });
