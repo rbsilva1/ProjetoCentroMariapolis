@@ -53,6 +53,12 @@
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.12.4</version> <!-- You can replace this version with the latest available version -->
+            <scope>test</scope> <!-- Make sure Mockito is only used for testing -->
+        </dependency>
     </dependencies>
     <build> 
         <plugins>

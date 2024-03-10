@@ -89,4 +89,10 @@ public class Usuario {
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     return sdf.format(this.data);
   }
+
+  @Override
+  public String toString() {
+    return "Usuario [cpf=" + cpf + ", nome=" + nome + ", cafe=" + cafe + ", almoco=" + almoco + ", janta=" + janta
+        + ", data=" + data + "]";
+  }
 }

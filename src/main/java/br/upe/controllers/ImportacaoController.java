@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class ImportacaoController {
-
     @FXML
     private Button api;
 
@@ -14,12 +13,7 @@ public class ImportacaoController {
 
     @FXML
     void importarCsv(ActionEvent event) {
+
         // Falta Implementar
     }
-
-    @FXML
-    void importarPelaApi(ActionEvent event) {
-        // Falta Implementar
-    }
-
 }

@@ -55,7 +55,7 @@
       <VBox style="-fx-background-color: #E8B0B069;">
          <Pane prefHeight="30.0" />
          <HBox alignment="CENTER" spacing="10">
-            <Button fx:id="BotaoImportar" layoutX="788.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Importar" textFill="WHITE">
+            <Button fx:id="BotaoImportar" layoutX="788.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="170.0" style="-fx-background-color: rgba(66, 109, 167, 1); -fx-cursor: hand;" text="Importar" textFill="WHITE" onAction="#importarCSV">
                <font>
                   <Font size="15.0" />
                </font>

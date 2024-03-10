@@ -15,6 +15,10 @@ import static br.upe.utils.CpfValidacao.validarCPF;
 
 import java.io.IOException;
 
+import br.upe.facades.FachadaUsuario;
+import br.upe.models.Usuario;
+import br.upe.utils.AbrirFXML;
+import br.upe.utils.AbrirPopup;
 import br.upe.utils.FormatarCPF;
 
 public class HomeController {
@@ -65,7 +69,13 @@ public class HomeController {
         String cpf = digitarCPF.getText().trim();
         boolean cpfValido = validarCPF(cpf);
         if (cpfValido) {
-            // Se o CPF for válido chamar as funções necessárias!
+            FachadaUsuario fachadaUsuario = new FachadaUsuario();
+            Usuario usuario = fachadaUsuario.buscarUsuario(cpf);
+            if (usuario == null) {
+                AbrirPopup.abrirPopup("/br/upe/resources/FXML/PopupErroCpf.fxml", "Erro CPF !");
+            }
+
+            AbrirPopup.abrirPopup("/br/upe/resources/FXML/PopDeCompraEfetuada.fxml", "Perfil");
         } else {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/upe/resources/FXML/PopupErroCpf.fxml"));
             Parent root = loader.load();

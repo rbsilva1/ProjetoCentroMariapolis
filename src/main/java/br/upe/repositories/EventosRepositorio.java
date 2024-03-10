@@ -23,10 +23,12 @@ public class EventosRepositorio {
     }
 
     // Criar
-    public void criarEvento(Evento evento) {
+    public Boolean criarEvento(Evento evento) {
         transaction.begin();
         entityManager.persist(evento);
         transaction.commit();
+
+        return true;
     }
 
     // Ler todos os eventos
@@ -42,17 +44,21 @@ public class EventosRepositorio {
     }
 
     // Atualizar
-    public void atualizarEvento(Evento evento) {
+    public Boolean atualizarEvento(Evento evento) {
         transaction.begin();
         entityManager.merge(evento);
         transaction.commit();
+
+        return true;
     }
 
     // Deletar
-    public void deletarEvento(Evento evento) {
+    public Boolean deletarEvento(Evento evento) {
         transaction.begin();
         entityManager.remove(evento);
         transaction.commit();
+
+        return true;
     }
 
     // Buscar por ID

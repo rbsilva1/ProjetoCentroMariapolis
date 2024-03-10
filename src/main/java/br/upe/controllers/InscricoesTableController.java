@@ -3,7 +3,9 @@ package br.upe.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.List;
 
+import br.upe.facades.FachadaUsuario;
 import br.upe.models.Usuario;
 import br.upe.utils.AbrirFXML;
 import br.upe.utils.AbrirTableView;
@@ -47,10 +49,9 @@ public class InscricoesTableController implements javafx.fxml.Initializable {
   }
 
   private ObservableList<Usuario> listaDeInscricoes() {
-    return FXCollections.observableArrayList(
-        new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3, 3, "12/09/2002"),
-        new Usuario("08973660420", "Vitório Fernandes de Amorim", 3, 3, 3, "12/09/2002"));
-
+    FachadaUsuario fachadaUsuario = new FachadaUsuario();
+    List<Usuario> usuarios = fachadaUsuario.mostrarUsuarios();
+    return FXCollections.observableArrayList(usuarios);
   }
 
   @FXML
