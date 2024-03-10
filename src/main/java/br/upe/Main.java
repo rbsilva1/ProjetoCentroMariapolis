@@ -10,21 +10,18 @@ import java.io.IOException;
 import br.upe.models.*;
 import javax.persistence.*;
 
+
 public class Main extends Application {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa");
         try {
             EntityManager em = entityManagerFactory.createEntityManager();
             EntityTransaction tx = em.getTransaction();
-            Usuario usuario = new Usuario();
-            usuario.setCpf("100.868.754-51");
-            usuario.setNome("Vitório Fernandes de Amorim");
-            usuario.setCafe(3);
-            usuario.setAlmoco(3);
-            usuario.setJanta(3);
-            usuario.setData("12/09/2002");
+            Usuario usuario = new Usuario("100.868.754-50", "Vitório Fernandes de Amorim", 3, 3, 3, "23/09/2002");
+            //Evento evento = new Evento("Festa2", "23/02/2024", "24/02/2024", "Centro");
             tx.begin();
             em.persist(usuario);
+            //em.persist(evento);
             tx.commit();
             em.close();
             entityManagerFactory.close();

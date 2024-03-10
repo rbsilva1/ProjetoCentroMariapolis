@@ -11,13 +11,12 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 @Entity
 @Access(AccessType.PROPERTY)
 public class Evento {
-    private final SimpleIntegerProperty id = new SimpleIntegerProperty();
+    private static int id;
     private final SimpleStringProperty nome = new SimpleStringProperty();
     private final SimpleStringProperty dataInicio = new SimpleStringProperty();
     private final SimpleStringProperty dataFim = new SimpleStringProperty();
@@ -37,20 +36,20 @@ public class Evento {
     }
 
     // Getters e setters
-    public void setId(Integer id) {
-        this.id.set(id);
-    }
-
-    @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long getId() {
-        return this.id.get();
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Column(name = "nome")
     public String getNome() {
-        return this.nome.get();
+        return nome.get();
     }
 
     public void setNome(String nome) {
@@ -59,16 +58,16 @@ public class Evento {
 
     @Column(name = "dataInicio")
     public String getDataInicio() {
-        return this.dataInicio.get();
-    }
-
-    @Column(name = "dataFim")
-    public String getDataFim() {
-        return this.dataFim.get();
+        return dataInicio.get();
     }
 
     public void setDataInicio(String dataInicio) {
         this.dataInicio.set(dataInicio);
+    }
+
+    @Column(name = "dataFim")
+    public String getDataFim() {
+        return dataFim.get();
     }
 
     public void setDataFim(String dataFim) {
@@ -77,20 +76,20 @@ public class Evento {
 
     @Column(name = "local")
     public String getLocal() {
-        return this.local.get();
-    }
-
-    @Column(name = "createAt")
-    public String getCreateAt() {
-        return this.createAt.get();
-    }
-
-    public void setCreateAt(String createAt) {
-        this.createAt.set(createAt);
+        return local.get();
     }
 
     public void setLocal(String local) {
         this.local.set(local);
+    }
+
+    @Column(name = "createAt")
+    public String getCreateAt() {
+        return createAt.get();
+    }
+
+    public void setCreateAt(String createAt) {
+        this.createAt.set(createAt);
     }
 
     // Método para obter a data atual formatada
@@ -99,5 +98,4 @@ public class Evento {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         return agora.format(formato);
     }
-
 }
