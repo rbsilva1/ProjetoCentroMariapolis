@@ -8,8 +8,8 @@ import br.upe.repositories.EventosRepositorio;
 public class FachadaEvento {
     private EventosRepositorio eventosRepositorio = EventosRepositorio.getInstance();
 
-    public void criarNovoEvento(String nomeE, String horaC, String horaS, String esta) {
-        Evento evento = new Evento(nomeE, horaC, horaS, esta);
+    public void criarNovoEvento(String nomeEvento1, String dataChegada, String dataSaida) {
+        Evento evento = new Evento(nomeEvento1, dataChegada, dataSaida);
 
         eventosRepositorio.criarEvento(evento);
     }

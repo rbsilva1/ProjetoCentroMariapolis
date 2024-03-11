@@ -7,14 +7,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.geometry.Insets?>
-
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.upe.controllers.InscricoesTableController">
    <top>
@@ -58,7 +55,7 @@
    </top>
       <center>
          <VBox alignment="CENTER" style="-fx-background-color: #E8B0B069;">
-            <Pane prefHeight="15"/>
+            <Pane prefHeight="15" />
             <VBox maxWidth="-Infinity">
                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity">
                    <HBox alignment="CENTER" spacing="10" />
@@ -67,10 +64,10 @@
                  <columns>
                      <TableColumn fx:id="nomeColuna" prefWidth="200" text="Nome" />
                      <TableColumn fx:id="cpfColuna" maxWidth="200" prefWidth="200" text="CPF" />
-                     <TableColumn fx:id="cafeColuna" prefWidth="200" text="Refeicao"/>
-                     <TableColumn fx:id="almocoColuna" prefWidth="200" text="Data" />
-                     <TableColumn fx:id="jantaColuna" prefWidth="200" text="Data" />
-                     <TableColumn fx:id="dataColuna" prefWidth="200" text="Data" />
+                     <TableColumn fx:id="cafeColuna" prefWidth="200" text="Refeicao" />
+                     <TableColumn fx:id="almocoColuna" prefWidth="200" text="Café" />
+                     <TableColumn fx:id="jantaColuna" prefWidth="200" text="Almoço" />
+                     <TableColumn fx:id="dataColuna" prefWidth="200" text="Janta" />
                  </columns>
                </TableView>
                </VBox>

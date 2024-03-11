@@ -31,9 +31,6 @@ public class EventosController implements javafx.fxml.Initializable {
     private TableColumn<Evento, String> horaSaidaColuna;
 
     @FXML
-    private TableColumn<Evento, String> estadosColuna;
-
-    @FXML
     private Button botaoHistorico1;
 
     @FXML
@@ -73,7 +70,6 @@ public class EventosController implements javafx.fxml.Initializable {
         nomeColuna.setCellValueFactory(new PropertyValueFactory<>("nome"));
         horaChegadaColuna.setCellValueFactory(new PropertyValueFactory<>("dataInicio"));
         horaSaidaColuna.setCellValueFactory(new PropertyValueFactory<>("dataFim"));
-        estadosColuna.setCellValueFactory(new PropertyValueFactory<>("local"));
 
         tabela.setItems(FXCollections.observableArrayList(new FachadaEvento().buscarEventos()));
 

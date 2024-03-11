@@ -16,7 +16,7 @@ class EventosRepositorioTest {
         EventosRepositorio repositorioMock = mock(EventosRepositorio.class);
 
         // Create an instance of Evento for testing
-        Evento evento = new Evento("Evento Teste", "20", "25", "Caruaru");
+        Evento evento = new Evento("Evento Teste", "20", "25");
 
         // Mock the behavior of the repository methods
         when(repositorioMock.criarEvento(any(Evento.class))).thenReturn(true);

@@ -27,11 +27,10 @@ public class Evento {
         // Construtor vazio necessário para o Hibernate
     }
 
-    public Evento(String nome, String dataInicio, String dataFim, String local) {
+    public Evento(String nome, String dataInicio, String dataFim) {
         setNome(nome);
         setDataInicio(dataInicio);
         setDataFim(dataFim);
-        setLocal(local);
         setCreateAt(dataAtual());
     }
 

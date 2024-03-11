@@ -19,13 +19,10 @@ public class CriarEventoController {
     private Button botaoHistorico1;
 
     @FXML
-    private TextField estados;
+    private TextField DataChegada;
 
     @FXML
-    private TextField horaChegada;
-
-    @FXML
-    private TextField horaSaida;
+    private TextField DataSaida;
 
     @FXML
     private Button inscricoes;
@@ -61,14 +58,12 @@ public class CriarEventoController {
 
     @FXML
     public void criarEvento(ActionEvent event) throws IOException {
-        String horaC = horaChegada.getText();
-        String esta = estados.getText();
-        String horaS = horaSaida.getText();
-        String nomeE = nomeEvento.getText();
-
+        String nomeEvento1 = nomeEvento.getText();
+        String dataChegada = DataChegada.getText();
+        String dataSaida = DataSaida.getText();
         FachadaEvento fachadaEvento = new FachadaEvento();
 
-        fachadaEvento.criarNovoEvento(nomeE, horaC, horaS, esta);
+        fachadaEvento.criarNovoEvento(nomeEvento1, dataChegada, dataSaida);
 
         AbrirFXML.abrirFXML(event, "/br/upe/resources/FXML/Eventos.fxml");
     }
