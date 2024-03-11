@@ -64,10 +64,10 @@
                  <columns>
                      <TableColumn fx:id="nomeColuna" prefWidth="200" text="Nome" />
                      <TableColumn fx:id="cpfColuna" maxWidth="200" prefWidth="200" text="CPF" />
-                     <TableColumn fx:id="cafeColuna" prefWidth="200" text="Refeicao" />
-                     <TableColumn fx:id="almocoColuna" prefWidth="200" text="Café" />
-                     <TableColumn fx:id="jantaColuna" prefWidth="200" text="Almoço" />
-                     <TableColumn fx:id="dataColuna" prefWidth="200" text="Janta" />
+                     <TableColumn fx:id="cafeColuna" prefWidth="200" text="Café" />
+                     <TableColumn fx:id="almocoColuna" prefWidth="200" text="Almoço" />
+                     <TableColumn fx:id="jantaColuna" prefWidth="200" text="Janta" />
+                     <TableColumn fx:id="dataColuna" prefWidth="200" text="Data" />
                  </columns>
                </TableView>
                </VBox>
