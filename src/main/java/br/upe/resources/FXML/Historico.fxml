@@ -67,9 +67,9 @@
                  <columns>
                      <TableColumn fx:id="nomeColuna" prefWidth="200" text="Nome" />
                      <TableColumn fx:id="cpfColuna" maxWidth="200" prefWidth="200" text="CPF" />
-                     <TableColumn fx:id="cafeColuna" prefWidth="200" text="Refeicao"/>
-                     <TableColumn fx:id="almocoColuna" prefWidth="200" text="Data" />
-                     <TableColumn fx:id="jantaColuna" prefWidth="200" text="Data" />
+                     <TableColumn fx:id="cafeColuna" prefWidth="200" text="Cafe"/>
+                     <TableColumn fx:id="almocoColuna" prefWidth="200" text="Almoco" />
+                     <TableColumn fx:id="jantaColuna" prefWidth="200" text="Janta" />
                  </columns>
                </TableView>
                </VBox>
