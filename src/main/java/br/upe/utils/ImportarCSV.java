@@ -5,7 +5,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.upe.models.Evento;
 import br.upe.models.Usuario;
 import javafx.stage.FileChooser;
 
@@ -27,19 +26,19 @@ public class ImportarCSV {
     return usuarios;
   }
 
-  public static List<Evento> ImportarCSVEvento() throws Exception {
-    FileChooser fileChooser = new FileChooser();
-    File selectedFile = fileChooser.showOpenDialog(null);
-    String line = "";
-    List<Evento> eventos = new ArrayList<Evento>();
-    BufferedReader br = new BufferedReader(new java.io.FileReader(selectedFile));
-    while ((line = br.readLine()) != null) {
-      String[] values = line.split(",");
-      Evento evento = new Evento(values[0], values[1], values[2], values[3]);
-      eventos.add(evento);
-    }
-    br.close();
+  // public static List<Evento> ImportarCSVEvento() throws Exception {
+  // FileChooser fileChooser = new FileChooser();
+  // File selectedFile = fileChooser.showOpenDialog(null);
+  // String line = "";
+  // List<Evento> eventos = new ArrayList<Evento>();
+  // BufferedReader br = new BufferedReader(new java.io.FileReader(selectedFile));
+  // while ((line = br.readLine()) != null) {
+  // String[] values = line.split(",");
+  // Evento evento = new Evento(values[0], values[1], values[2], values[3]);
+  // eventos.add(evento);
+  // }
+  // br.close();
 
-    return eventos;
-  }
+  // return eventos;
+  // }
 }
